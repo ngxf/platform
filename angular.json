@@ -133,6 +133,11 @@
           "options": {
             "tsConfig": "projects/platform/tsconfig.lib.json",
             "project": "projects/platform/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/platform/ng-package.prod.json"
+            }
           }
         },
         "test": {

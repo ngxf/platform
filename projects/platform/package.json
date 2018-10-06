@@ -1,6 +1,41 @@
 {
   "name": "@ngxf/platform",
-  "version": "0.0.1",
+  "version": "6.0.1",
+  "description": "NGXF - Non-State Management for Angular",
+  "keywords": [
+    "non-ngxs",
+    "non-redux",
+    "non-state",
+    "rxjs",
+    "angular",
+    "ngx",
+    "angular2",
+    "non-cqrs",
+    "non-store",
+    "non-state-management",
+    "non-event-stream",
+    "non-boilerplate"
+  ],
+  "author": "thekiba <hr@thekiba.io>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngxf/platform.git"
+  },
+  "maintainers": [
+    {
+      "name": "thekiba",
+      "email": "hr@thekiba.io"
+    },
+    {
+      "name": "AlexDaSoul",
+      "email": "alexdasoul@gmail.com"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/ngxf/platform/issues"
+  },
+  "homepage": "https://github.com/ngxf/platform",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
