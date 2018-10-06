@@ -1,7 +1,7 @@
 <p align="center">
   <img src="assets/logo.png">
   <br />
-  NGXF is a state management pattern + library for Angular
+  NGXF is a non-state management pattern + library for Angular
   <br />
   <br />
   <a href="https://badge.fury.io/js/%40ngxf%2Fplatform"><img src="https://badge.fury.io/js/%40ngxf%2Fplatform.svg"></a> <a href="https://circleci.com/gh/ngxf/platform"><img src="https://circleci.com/gh/ngxf/platform/tree/master.svg?style=svg"></a>
