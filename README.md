@@ -4,7 +4,7 @@
   NGXF is a non-state management pattern + library for Angular
   <br />
   <br />
-  <a href="https://badge.fury.io/js/%40ngxf%2Fplatform"><img src="https://badge.fury.io/js/%40ngxf%2Fplatform.svg"></a> <a href="https://circleci.com/gh/ngxf/platform"><img src="https://circleci.com/gh/ngxf/platform/tree/master.svg?style=svg"></a>
+  <a href="https://badge.fury.io/js/%40ngxf%2Fplatform"><img src="https://badge.fury.io/js/%40ngxf%2Fplatform.svg"></a>
 </p>
 
 ## :interrobang: What is NGXF?
@@ -15,8 +15,7 @@ NGXF is modeled after the CQRS pattern popularly implemented in libraries like R
 but reduces boilerplate by using modern HTML features such as templates and directives.
 
 ## 👋 New to NGXF?
-If you're just getting started with NGXF, I recommend you head over to the [concepts](concepts/intro.md)
-and then explore the rich ecosystem of examples in the [community resources](community/projects.md) page.
+If you're just getting started with NGXF, I recommend you head over to the [concepts](https://ngxf.gitbook.io/platform/concepts/introduction).
 
 ## ❓ Need Help?
 For questions, please ask them on Stack Overflow with the `ngxf` tag:
@@ -27,5 +26,5 @@ To chat with other users and contributers join us on Telegram: https://t.me/ngSo
 If you think there is a bug in this library, you can open an issue on GitHub (https://github.com/ngxf/platform/issues/new). If possible a link to a http://stackblitz.com (or github) repo with a repro or a failing test would be great.
 
 ## ❤️ Giving Back
-Become a [Contributor](community/contributors.md) or a [Sponsor](community/sponsors.md).
+Become a [Contributor](https://ngxf.gitbook.io/platform/community/contributing).
 
