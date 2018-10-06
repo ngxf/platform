@@ -16,6 +16,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "platform": [
+        "dist/platform"
+      ],
+      "platform/*": [
+        "dist/platform/*"
+      ]
+    }
   }
 }

@@ -121,6 +121,41 @@
           }
         }
       }
+    },
+    "platform": {
+      "root": "projects/platform",
+      "sourceRoot": "projects/platform/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/platform/tsconfig.lib.json",
+            "project": "projects/platform/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/platform/src/test.ts",
+            "tsConfig": "projects/platform/tsconfig.spec.json",
+            "karmaConfig": "projects/platform/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/platform/tsconfig.lib.json",
+              "projects/platform/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngxf"

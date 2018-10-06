@@ -1,27 +1,31 @@
-# Ngxf
+<p align="center">
+  <img src="assets/logo.png">
+  <br />
+  NGXF is a state management pattern + library for Angular
+  <br />
+  <br />
+  <a href="https://badge.fury.io/js/%40ngxf%2Fplatform"><img src="https://badge.fury.io/js/%40ngxf%2Fplatform.svg"></a> <a href="https://circleci.com/gh/ngxf/platform"><img src="https://circleci.com/gh/ngxf/platform/tree/master.svg?style=svg"></a>
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+## :interrobang: What is NGXF?
+NGXF is a non-state management pattern + library for Angular. It acts as a multiple source of
+truth for your application's state, providing simple rules for predictable state mutations.
 
-## Development server
+NGXF is modeled after the CQRS pattern popularly implemented in libraries like Redux, NGRX and NGXS
+but reduces boilerplate by using modern HTML features such as templates and directives.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 👋 New to NGXF?
+If you're just getting started with NGXF, I recommend you head over to the [concepts](concepts/intro.md)
+and then explore the rich ecosystem of examples in the [community resources](community/projects.md) page.
 
-## Code scaffolding
+## ❓ Need Help?
+For questions, please ask them on Stack Overflow with the `ngxf` tag:
+https://stackoverflow.com/questions/ask?tags=ngxf
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To chat with other users and contributers join us on Telegram: https://t.me/ngSoviet
 
-## Build
+If you think there is a bug in this library, you can open an issue on GitHub (https://github.com/ngxf/platform/issues/new). If possible a link to a http://stackblitz.com (or github) repo with a repro or a failing test would be great.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## ❤️ Giving Back
+Become a [Contributor](community/contributors.md) or a [Sponsor](community/sponsors.md).
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
