@@ -1,5 +1,10 @@
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
+interface InitContext {
+    $implicit: any;
+    init: any;
+}
+
 @Directive({selector: '[init]'})
 export class InitDirective {
 
@@ -9,7 +14,7 @@ export class InitDirective {
     }
 
     constructor(
-        private templateRef: TemplateRef<any>,
+        private templateRef: TemplateRef<InitContext>,
         private viewContainer: ViewContainerRef
     ) {
     }
