@@ -43,8 +43,8 @@ const HTTP_CONFIG: HttpStrategy[] = [
     },
     {
         type: HttpStrategies.JSONP,
-        changes: ['httpJsonp', 'httpCallbackParam'],
-        require: ['httpJsonp', 'httpCallbackParam']
+        changes: ['httpJsonp', 'httpCallback'],
+        require: ['httpJsonp', 'httpCallback']
     },
     {
         type: HttpStrategies.OPTIONS,
@@ -53,18 +53,18 @@ const HTTP_CONFIG: HttpStrategy[] = [
     },
     {
         type: HttpStrategies.PATCH,
-        changes: ['httpPatch', 'httpBody', 'httpWith'],
-        require: ['httpPatch', 'httpBody']
+        changes: ['httpPatch', 'httpSend', 'httpWith'],
+        require: ['httpPatch', 'httpSend']
     },
     {
         type: HttpStrategies.POST,
-        changes: ['httpPost', 'httpBody', 'httpWith'],
-        require: ['httpPost', 'httpBody']
+        changes: ['httpPost', 'httpSend', 'httpWith'],
+        require: ['httpPost', 'httpSend']
     },
     {
         type: HttpStrategies.PUT,
-        changes: ['httpPut', 'httpBody', 'httpWith'],
-        require: ['httpPut', 'httpBody']
+        changes: ['httpPut', 'httpSend', 'httpWith'],
+        require: ['httpPut', 'httpSend']
     }
 ];
 
@@ -80,8 +80,8 @@ export class HttpDirective implements OnChanges {
     @Input() httpPost: string;
     @Input() httpPut: string;
 
-    @Input() httpBody: any;
-    @Input() httpCallbackParam: string;
+    @Input() httpSend: any;
+    @Input() httpCallback: string;
     @Input() httpWith: any;
 
     private context: HttpContext = {
