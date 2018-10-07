@@ -115,15 +115,13 @@ export class HttpDirective implements OnChanges {
     private execute(strategy: HttpStrategy) {
         const params = strategy.changes.map(field => this[field]);
 
-        console.log(strategy, ...params);
-
         this.request(strategy.type, ...params);
     }
 
     private request(method, ...params) {
         this.http[method](...params)
             .pipe(catchError((e) => {
-                console.log(e);
+                console.error(e);
                 return of(null);
             }))
             .subscribe((data) => {

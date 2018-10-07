@@ -15,6 +15,7 @@ const COMPONENTS = [
     exports: [
         CommonModule,
         COMPONENTS,
+        NgxfModule,
         MatToolbarModule,
         MatButtonModule,
         MatSidenavModule,
