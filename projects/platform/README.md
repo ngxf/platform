@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png">
+  <img src="https://github.com/ngxf/platform/raw/master/assets/logo.png">
   <br />
   NGXF is a non-state management pattern + library for Angular
   <br />
