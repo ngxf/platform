@@ -23,6 +23,9 @@
       ],
       "platform/*": [
         "dist/platform/*"
+      ],
+      "@ngxf/platform": [
+        "projects/platform/src"
       ]
     }
   }
