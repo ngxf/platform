@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { HttpDirective } from './directives';
+import * as directives from './directives';
 
 @NgModule({
   imports: [],
-  declarations: [HttpDirective],
-  exports: [HttpDirective]
+  declarations: [...directives.list],
+  exports: [...directives.list]
 })
 export class NgxfModule { }
