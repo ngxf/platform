@@ -1,16 +1,23 @@
-import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Directive, Input, TemplateRef, ViewContainerRef, EmbeddedViewRef } from '@angular/core';
 
-@Directive({selector: '[init]'})
+interface InitContext {
+    $implicit: any;
+}
+
+@Directive({ selector: '[init]' })
 export class InitDirective {
 
-    @Input() set init(val: any) {
-        this.viewContainer.clear();
-        this.viewContainer.createEmbeddedView(this.templateRef, {init: val});
+    @Input() set initOf(value: any) {
+        this.context.$implicit = value;
+        this.viewRef.markForCheck();
     }
 
+    private context: InitContext = { $implicit: null };
+    private viewRef: EmbeddedViewRef<InitContext> =
+        this.viewContainerRef.createEmbeddedView(this.templateRef, this.context);
+
     constructor(
-        private templateRef: TemplateRef<any>,
-        private viewContainer: ViewContainerRef
-    ) {
-    }
+        private templateRef: TemplateRef<InitContext>,
+        private viewContainerRef: ViewContainerRef
+    ) { }
 }
