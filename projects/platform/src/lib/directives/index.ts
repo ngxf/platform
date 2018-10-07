@@ -4,7 +4,7 @@ import { InitDirective } from './init.directive';
 import { TimeoutDirective } from './timeout.directive';
 import { ComposeDirective, ReturnDirective } from './compose.directive';
 
-export const list = [
+export const DIRECTIVES = [
     HttpDirective,
     RouteDirective,
     InitDirective,
