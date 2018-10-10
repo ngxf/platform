@@ -10,6 +10,8 @@ import { NavComponent } from './layout/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { CoreModule } from './core';
 import { SharedModule } from './shared';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { SharedModule } from './shared';
           { path: 'users', loadChildren: './view/users/users.module#UsersViewModule' }
         ]
       } ], {}),
+    AngularFireModule.initializeApp(environment.firebase),
     CoreModule,
     SharedModule,
     LayoutModule,

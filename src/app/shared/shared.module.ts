@@ -11,6 +11,7 @@ import {
   MatCardModule,
   MatMenuModule
 } from '@angular/material';
+import { NgxfFireModule } from '@ngxf/fire';
 import { NgxfSocketIOModule } from '@ngxf/socket.io';
 
 import { UserComponent } from './user';
@@ -27,6 +28,7 @@ const COMPONENTS = [
     COMPONENTS,
     NgxfModule,
     NgxfSocketIOModule,
+    NgxfFireModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,

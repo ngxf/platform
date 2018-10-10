@@ -18,17 +18,14 @@
       "dom"
     ],
     "paths": {
-      "platform": [
-        "dist/platform"
-      ],
-      "platform/*": [
-        "dist/platform/*"
-      ],
       "@ngxf/platform": [
         "projects/platform/src"
       ],
       "@ngxf/socket.io": [
         "projects/socketio/src"
+      ],
+      "@ngxf/fire": [
+        "projects/fire/src"
       ]
     }
   },

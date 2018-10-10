@@ -210,6 +210,46 @@
           }
         }
       }
+    },
+    "fire": {
+      "root": "projects/fire",
+      "sourceRoot": "projects/fire/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/fire/tsconfig.lib.json",
+            "project": "projects/fire/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/fire/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/fire/src/test.ts",
+            "tsConfig": "projects/fire/tsconfig.spec.json",
+            "karmaConfig": "projects/fire/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/fire/tsconfig.lib.json",
+              "projects/fire/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngxf"
