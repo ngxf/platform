@@ -1,6 +1,6 @@
-import { Directive, Input, TemplateRef, ViewContainerRef, EmbeddedViewRef, OnChanges, SimpleChanges } from '@angular/core';
+import { Directive, Input, TemplateRef, ViewContainerRef, EmbeddedViewRef, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs';
+import { of, Subscription } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 enum HttpStrategies {
@@ -69,7 +69,7 @@ const HTTP_CONFIG: HttpStrategy[] = [
 ];
 
 @Directive({ selector: '[http]' })
-export class HttpDirective implements OnChanges {
+export class HttpDirective implements OnChanges, OnDestroy {
 
     @Input() httpDelete: string;
     @Input() httpGet: string;
@@ -92,6 +92,8 @@ export class HttpDirective implements OnChanges {
     private viewRef: EmbeddedViewRef<HttpContext> =
         this.viewContainerRef.createEmbeddedView(this.templateRef, this.context);
 
+    private subscription: Subscription;
+
     constructor(
         private http: HttpClient,
         private templateRef: TemplateRef<HttpContext>,
@@ -103,6 +105,10 @@ export class HttpDirective implements OnChanges {
         if (strategy) {
             this.execute(strategy);
         }
+    }
+
+    ngOnDestroy() {
+        this.dispose();
     }
 
     private findStrategy(changes: SimpleChanges): HttpStrategy {
@@ -119,7 +125,8 @@ export class HttpDirective implements OnChanges {
     }
 
     private request(method, ...params) {
-        this.http[method](...params)
+        this.dispose();
+        this.subscription = this.http[method](...params)
             .pipe(catchError((e) => {
                 console.error(e);
                 return of(null);
@@ -128,5 +135,12 @@ export class HttpDirective implements OnChanges {
                 this.context.$implicit = data;
                 this.viewRef.markForCheck();
             });
+    }
+
+    private dispose() {
+        if (this.subscription && !this.subscription.closed) {
+            this.subscription.unsubscribe();
+            this.subscription = null;
+        }
     }
 }
