@@ -1,15 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <router-outlet></router-outlet>
 
-<ng-container *cookies="let cookie set 'ngxf' value 'Best Of The Best' path '/' domain: 'localhost' expires '01 Oct 2020'">
-    {{ cookie }}
-</ng-container>
-
-<ng-container *cookies="let cookie get 'ngxf'">
-    {{ cookie }}
-</ng-container>
-
-
-<ng-container *cookies="let cookie remove 'ngxf' path '/' domain: 'localhost'">
-    {{ cookie }}
-</ng-container>
+<ng-container *cookies="let cookie set 'ngxf' value 'Best Of The Best' path '/' domain 'localhost' expires '01 Oct 2020'">{{ cookie }}</ng-container>
+<ng-container *cookies="let cookie get 'ngxf'">{{ cookie }}</ng-container>
+<ng-container *cookies="let cookie remove 'ngxf' path '/' domain 'localhost'">{{ cookie }}</ng-container>

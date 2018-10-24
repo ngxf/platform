@@ -28,5 +28,8 @@
         "projects/platform/src"
       ]
     }
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

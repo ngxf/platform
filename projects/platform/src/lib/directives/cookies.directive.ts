@@ -59,9 +59,7 @@ export class CookiesDirective implements OnChanges {
 
     private context: CookiesContext = {
         $implicit: null,
-        get data() {
-            return this.$implicit;
-        }
+        get data() { return this.$implicit; }
     };
 
     private viewRef: EmbeddedViewRef<CookiesContext> =
@@ -116,7 +114,7 @@ export class CookiesDirective implements OnChanges {
 
         if (CookiesStrategies.REMOVE === type) {
             this.removeCookie(name, cookieOptions);
-            this.context.$implicit = undefined;
+            this.context.$implicit = null;
         }
 
         this.viewRef.markForCheck();

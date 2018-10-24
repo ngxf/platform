@@ -54,17 +54,17 @@ const HTTP_CONFIG: HttpStrategy[] = [
     {
         type: HttpStrategies.PATCH,
         changes: ['httpPatch', 'httpSend', 'httpWith'],
-        require: ['httpPatch', 'httpSend']
+        require: ['httpPatch']
     },
     {
         type: HttpStrategies.POST,
         changes: ['httpPost', 'httpSend', 'httpWith'],
-        require: ['httpPost', 'httpSend']
+        require: ['httpPost']
     },
     {
         type: HttpStrategies.PUT,
         changes: ['httpPut', 'httpSend', 'httpWith'],
-        require: ['httpPut', 'httpSend']
+        require: ['httpPut']
     }
 ];
 
