@@ -9,7 +9,7 @@
 
 ### Features
 
-* **core:** added *lazy directive ([202eade](https://github.com/ngxf/platform/commit/202eade))
+* **core:** added *lazy directive ([15d6a28](https://github.com/ngxf/platform/commit/15d6a28))
 
 
 
