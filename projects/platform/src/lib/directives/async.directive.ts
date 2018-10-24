@@ -59,9 +59,9 @@ export class AsyncDirective implements OnChanges, OnDestroy {
 
   @Input() async: ObservableOrPromise<any>;
   @Input() asyncFrom: ObservableOrPromise<any>;
-  @Input() asyncNext: any;
-  @Input() asyncError: any;
-  @Input() asyncComplete: any;
+  @Input() asyncNext: (value: any) => void;
+  @Input() asyncError: (error: any) => void;
+  @Input() asyncComplete: () => void;
 
   @Output() next: EventEmitter<any> = new EventEmitter<any>();
   @Output() error: EventEmitter<any> = new EventEmitter<any>();
@@ -108,8 +108,8 @@ export class AsyncDirective implements OnChanges, OnDestroy {
     this.subscription = this.strategy.createSubscription(
       async,
       (value: any) => this.onNext(value),
-      (value: any) => this.onError(value),
-      (value: any) => this.onComplete(value)
+      (error: any) => this.onError(error),
+      () => this.onComplete()
     );
   }
 
@@ -122,17 +122,17 @@ export class AsyncDirective implements OnChanges, OnDestroy {
     this.viewRef.markForCheck();
   }
 
-  private onError(value: any): void {
-    this.error.emit(value);
+  private onError(error: any): void {
+    this.error.emit(error);
     if (isFunction(this.asyncError)) {
-      this.asyncError(value);
+      this.asyncError(error);
     }
   }
 
-  private onComplete(value: any): void {
-    this.complete.next(value);
+  private onComplete(): void {
+    this.complete.next();
     if (isFunction(this.asyncComplete)) {
-      this.asyncComplete(value);
+      this.asyncComplete();
     }
   }
 
