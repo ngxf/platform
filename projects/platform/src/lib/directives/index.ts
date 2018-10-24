@@ -1,23 +1,26 @@
-import { HttpDirective } from './http.directive';
-import { RouteDirective } from './route.directive';
-import { InitDirective } from './init.directive';
-import { TimeoutDirective } from './timeout.directive';
+import { AsyncDirective } from './async.directive';
 import { ComposeDirective, ReturnDirective } from './compose.directive';
 import { CookiesDirective } from './cookies.directive';
+import { HttpDirective } from './http.directive';
+import { InitDirective } from './init.directive';
+import { RouteDirective } from './route.directive';
+import { TimeoutDirective } from './timeout.directive';
 
 export const DIRECTIVES = [
-    HttpDirective,
-    RouteDirective,
-    InitDirective,
-    TimeoutDirective,
-    ComposeDirective,
-    ReturnDirective,
-    CookiesDirective
+  AsyncDirective,
+  ComposeDirective,
+  CookiesDirective,
+  HttpDirective,
+  InitDirective,
+  ReturnDirective,
+  RouteDirective,
+  TimeoutDirective
 ];
 
-export * from './http.directive';
-export * from './route.directive';
-export * from './init.directive';
-export * from './timeout.directive';
+export * from './async.directive';
 export * from './compose.directive';
 export * from './cookies.directive';
+export * from './http.directive';
+export * from './init.directive';
+export * from './route.directive';
+export * from './timeout.directive';
