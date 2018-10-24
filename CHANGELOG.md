@@ -1,3 +1,19 @@
+<a name="6.0.4"></a>
+## 6.0.4 (2018-10-24)
+
+
+### Bug Fixes
+
+* **core:** fixes memory leaks ([0e5c431](https://github.com/ngxf/platform/commit/0e5c431))
+* **core:** fixes ts types, added missing import ([5dcb390](https://github.com/ngxf/platform/commit/5dcb390))
+
+
+### Features
+
+* **core:** added *async directive ([afdd2bd](https://github.com/ngxf/platform/commit/afdd2bd))
+
+
+
 <a name="6.0.3"></a>
 ## 6.0.3 (2018-10-07)
 
@@ -11,10 +27,6 @@
 
 * **core:** added *compose directive ([3f41dc7](https://github.com/ngxf/platform/commit/3f41dc7))
 * **core:** added *init directive ([0978dc0](https://github.com/ngxf/platform/commit/0978dc0))
-* **core:** added *init directive ([8ebd9df](https://github.com/ngxf/platform/commit/8ebd9df))
-* **core:** added *route directive ([5d21413](https://github.com/ngxf/platform/commit/5d21413))
-* **core:** added support for all types of http requests ([7c10475](https://github.com/ngxf/platform/commit/7c10475))
-* **core:** created http directive ([21b6409](https://github.com/ngxf/platform/commit/21b6409))
 
 
 
@@ -26,7 +38,6 @@
 
 * **core:** added *route directive ([5d21413](https://github.com/ngxf/platform/commit/5d21413))
 * **core:** added support for all types of http requests ([7c10475](https://github.com/ngxf/platform/commit/7c10475))
-* **core:** created http directive ([21b6409](https://github.com/ngxf/platform/commit/21b6409))
 
 
 
