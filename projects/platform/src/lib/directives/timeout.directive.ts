@@ -19,6 +19,7 @@ export class TimeoutDirective implements OnDestroy {
 
   ngOnDestroy() {
     this.dispose();
+    this.viewContainerRef.clear();
   }
 
   private create(milliseconds: number) {

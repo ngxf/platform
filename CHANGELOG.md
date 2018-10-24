@@ -1,3 +1,18 @@
+<a name="6.0.5"></a>
+## 6.0.5 (2018-10-24)
+
+
+### Bug Fixes
+
+* **core:** fixes types for *async directive ([99c47ce](https://github.com/ngxf/platform/commit/99c47ce))
+
+
+### Features
+
+* **core:** added *lazy directive ([202eade](https://github.com/ngxf/platform/commit/202eade))
+
+
+
 <a name="6.0.4"></a>
 ## 6.0.4 (2018-10-24)
 

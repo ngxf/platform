@@ -90,6 +90,11 @@ export class AsyncDirective implements OnChanges, OnDestroy {
 
   ngOnDestroy() {
     this.dispose();
+    this.viewContainer.clear();
+    if (this.viewRef) {
+      this.viewRef.destroy();
+      this.viewRef = null;
+    }
   }
 
   private onAsyncDidChanged(current: ObservableOrPromise<any>, previous: ObservableOrPromise<any>): void {

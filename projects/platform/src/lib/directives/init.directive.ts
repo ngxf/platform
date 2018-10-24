@@ -1,11 +1,11 @@
-import { Directive, EmbeddedViewRef, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Directive, EmbeddedViewRef, Input, OnDestroy, TemplateRef, ViewContainerRef } from '@angular/core';
 
 interface InitContext {
   $implicit: any;
 }
 
 @Directive({ selector: '[init]' })
-export class InitDirective {
+export class InitDirective implements OnDestroy {
 
   @Input() set initOf(value: any) {
     this.context.$implicit = value;
@@ -19,6 +19,14 @@ export class InitDirective {
   constructor(
     private templateRef: TemplateRef<InitContext>,
     private viewContainer: ViewContainerRef
-  ) { }
+  ) {}
+
+  ngOnDestroy() {
+    this.viewContainer.clear();
+    if (this.viewRef) {
+      this.viewRef.destroy();
+      this.viewRef = null;
+    }
+  }
 
 }
