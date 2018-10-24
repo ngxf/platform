@@ -14,7 +14,7 @@ interface SubscriptionStrategy {
 }
 
 class ObservableStrategy implements SubscriptionStrategy {
-  createSubscription(async: ObservableOrPromise<any>, next: any, error: any, complete: any): SubscriptionLike {
+  createSubscription(async: Observable<any>, next: any, error: any, complete: any): SubscriptionLike {
     return async.subscribe(next, error, complete);
   }
 
@@ -26,8 +26,14 @@ class ObservableStrategy implements SubscriptionStrategy {
 }
 
 class PromiseStrategy implements SubscriptionStrategy {
-  createSubscription(async: Observable<any> | Promise<any>, next: any, error: any, complete: any): Promise<any> {
-    return async.then(next, error).finally(complete);
+  createSubscription(async: Promise<any>, next: any, error: any, complete: any): Promise<any> {
+    const promise = async.then(next, error);
+
+    if ('finally' in promise) {
+      return (promise as any).finally(complete);
+    }
+
+    return promise;
   }
 
   dispose(subscription: Promise<any>): void {}
@@ -97,7 +103,7 @@ export class AsyncDirective implements OnChanges, OnDestroy {
     }
   }
 
-  private subscribe(async: ObservableOrPromise<async>) {
+  private subscribe(async: ObservableOrPromise<any>) {
     this.strategy = resolveStrategy(async);
     this.subscription = this.strategy.createSubscription(
       async,

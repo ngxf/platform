@@ -1,28 +1,20 @@
 import { NgModule } from '@angular/core';
-import {
-    HttpDirective,
-    RouteDirective,
-    InitDirective,
-    TimeoutDirective,
-    ComposeDirective,
-    ReturnDirective,
-    CookiesDirective
-} from './directives';
+import { AsyncDirective, ComposeDirective, CookiesDirective, HttpDirective, InitDirective, ReturnDirective, RouteDirective, TimeoutDirective } from './directives';
 
 const DIRECTIVES = [
-    HttpDirective,
-    RouteDirective,
-    InitDirective,
-    TimeoutDirective,
-    ComposeDirective,
-    ReturnDirective,
-    CookiesDirective
+  AsyncDirective,
+  ComposeDirective,
+  CookiesDirective,
+  HttpDirective,
+  InitDirective,
+  ReturnDirective,
+  RouteDirective,
+  TimeoutDirective
 ];
 
 @NgModule({
-    imports: [],
-    declarations: [DIRECTIVES],
-    exports: [DIRECTIVES]
+  imports: [],
+  declarations: [ DIRECTIVES ],
+  exports: [ DIRECTIVES ]
 })
-export class NgxfModule {
-}
+export class NgxfModule {}

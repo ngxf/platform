@@ -1,6 +1,6 @@
 {
   "name": "@ngxf/platform",
-  "version": "6.0.3",
+  "version": "6.0.4",
   "description": "NGXF - Non-State Management for Angular",
   "keywords": [
     "non-ngxs",
@@ -37,9 +37,9 @@
   },
   "homepage": "https://github.com/ngxf/platform",
   "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/router": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0",
+    "@angular/router": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0",
     "rxjs": ">=6.0.0 || ^5.6.0-forward-compat.4"
   }
 }
