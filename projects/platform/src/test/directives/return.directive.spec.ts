@@ -1,0 +1,34 @@
+import { Component } from '@angular/core';
+import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectator';
+import { ReturnDirective, ComposeDirective } from '../../lib/directives';
+
+@Component({ selector: 'host', template: '' })
+class Host {}
+
+const TEMPLATE = `
+<ng-template #return let-text="text">
+  <ng-container *return="{ name: text + ', World!' }"></ng-container>
+</ng-template>
+
+<ng-template #greet let-name="name">{{ name }} 123123</ng-template>
+
+<ng-container *compose="let enhancer of [return]">
+  <div *ngTemplateOutlet="enhancer(greet) context { text: 'Hello' }"></div>
+</ng-container>
+`;
+
+describe('ReturnDirective', () => {
+  let host: SpectatorWithHost<ReturnDirective, Host>;
+  const create = createHostComponentFactory({
+    component: ReturnDirective,
+    host: Host,
+    declarations: [ ComposeDirective ]
+  });
+
+  it('should return new context', () => {
+    host = create(TEMPLATE);
+
+    expect(host.hostElement).toHaveText('Hello, World!');
+  });
+
+});

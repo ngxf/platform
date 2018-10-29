@@ -72,7 +72,6 @@ export class CookiesDirective implements OnChanges, OnDestroy {
 
   ngOnChanges(changes: SimpleChanges) {
     const strategy: CookiesStrategy = this.findStrategy(changes);
-
     if (strategy) {
       this.execute(strategy);
     }

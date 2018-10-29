@@ -23,12 +23,18 @@
     </ng-container>
 </ng-template>
 
+<ng-template #showOrg let-org>
+  <ul>
+    <li>Login: {{ org.login }}</li>
+  </ul>
+</ng-template>
+
 <ng-container *compose="
-    let org of [
+    let enhance of [
         fetchUser,
         getFieldOrgUrl,
         fetchOrg
-    ] use 'thekiba'
+    ]
 ">
-    {{ org | json }}
+    <ng-container *></ng-container>
 </ng-container>

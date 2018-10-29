@@ -1,5 +1,5 @@
 import { ANALYZE_FOR_ENTRY_COMPONENTS, ModuleWithProviders, NgModule, Type } from '@angular/core';
-import { AsyncDirective, ComposeDirective, CookiesDirective, HttpDirective, LazyDirective, LAZY_COMPONENT_TOKEN, InitDirective, ReturnDirective, RouteDirective, TimeoutDirective } from './directives';
+import { AsyncDirective, ComposeDirective, CookiesDirective, HttpDirective, InitDirective, LAZY_COMPONENT_TOKEN, LazyDirective, NestDirective, RenamePropDirective, ReturnDirective, RouteDirective, SetPropsDirective, TimeoutDirective } from './directives';
 
 const DIRECTIVES = [
   AsyncDirective,
@@ -8,8 +8,11 @@ const DIRECTIVES = [
   HttpDirective,
   LazyDirective,
   InitDirective,
+  NestDirective,
+  RenamePropDirective,
   ReturnDirective,
   RouteDirective,
+  SetPropsDirective,
   TimeoutDirective
 ];
 

@@ -27,7 +27,7 @@ export class TimeoutDirective implements OnDestroy {
       if (this.viewContainerRef) {
         this.viewContainerRef.createEmbeddedView(this.templateRef);
       }
-    }, milliseconds) as any as number;
+    }, milliseconds);
   }
 
   private dispose() {

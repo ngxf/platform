@@ -1,80 +1,34 @@
-import { Directive, Input, ViewContainerRef, TemplateRef, EmbeddedViewRef, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
+import { Directive, EmbeddedViewRef, Input, OnChanges, OnDestroy, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
+import { ComposedContext, ComposedView } from '../tools';
 
-const COMPOSED_CONTEXT_TOKEN = '[COMPOSED_CONTEXT_TOKEN]';
-
-interface ComposedContext {
-  $implicit: any;
-  templateRefs: TemplateRef<ComposedContext>[];
-
-  [ key: string ]: any;
+interface ComposeContext {
+  $implicit: ComposeFn<any>;
+  compose: ComposeFn<any>;
 }
 
-class ComposedView {
-
-  private context: ComposedContext = {
-    $implicit: null,
-    templateRefs: [],
-    [ COMPOSED_CONTEXT_TOKEN ]: COMPOSED_CONTEXT_TOKEN
-  };
-  private viewRef: EmbeddedViewRef<ComposedContext>;
-
-  constructor(private viewContainerRef: ViewContainerRef) {}
-
-  render($implicit: any, templateRefs: TemplateRef<ComposedContext>[]) {
-    this.viewContainerRef.clear();
-    this.context.$implicit = $implicit;
-
-    const [ templateRef, ...tail ] = templateRefs;
-    this.context.templateRefs = tail;
-    this.viewRef =
-      this.viewContainerRef.createEmbeddedView(templateRef, this.context);
-  }
-
-  update($implicit: any) {
-    if (this.viewRef) {
-      this.context.$implicit = $implicit;
-      this.viewRef.markForCheck();
-    }
-  }
-
-  destroy() {
-    this.viewContainerRef.clear();
-    if (this.viewRef) {
-      this.viewRef.destroy();
-      this.viewRef = null;
-    }
-  }
-}
+type ComposeFn<T> = (templateRef: TemplateRef<T> | ComposedView<T>) => ComposedView<T>;
 
 @Directive({ selector: '[compose]' })
 export class ComposeDirective implements OnChanges, OnDestroy {
-  @Input() composeOf: TemplateRef<ComposedContext>[];
-  @Input() composeUse: any;
 
-  private get templateRefs(): TemplateRef<ComposedContext>[] {
-    return this.composeOf;
-  }
+  @Input() compose: TemplateRef<any>[];
+  @Input() composeOf: TemplateRef<any>[];
 
-  private composedView: ComposedView;
+  private context: ComposeContext = { $implicit: null, compose: null };
+  private viewRef: EmbeddedViewRef<ComposeContext>;
 
   constructor(
-    private templateRef: TemplateRef<ComposedContext>,
-    viewContainerRef: ViewContainerRef
-  ) {
-    this.composedView = new ComposedView(viewContainerRef);
-  }
+    private templateRef: TemplateRef<ComposeContext>,
+    private viewContainerRef: ViewContainerRef
+  ) {}
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.composeOf && this.composeOf) {
-      return this.render();
+    if ('compose' in changes) {
+      this.onTemplateRefsDidChanged(this.compose, changes.compose.previousValue);
     }
 
-    if (changes.composeUse && this.composeOf) {
-      return this.update();
-    }
-
-    if (changes.composeOf && !this.composeOf) {
-      return this.destroy();
+    if ('composeOf' in changes) {
+      this.onTemplateRefsDidChanged(this.composeOf, changes.composeOf.previousValue);
     }
   }
 
@@ -82,65 +36,37 @@ export class ComposeDirective implements OnChanges, OnDestroy {
     this.destroy();
   }
 
-  private render() {
-    const templateRefs = [ ...this.templateRefs, this.templateRef ];
-    this.composedView.render(this.composeUse, templateRefs);
-  }
+  private onTemplateRefsDidChanged(current: TemplateRef<any>[], previous: TemplateRef<any>[]): void {
+    if (!this.viewRef) {
+      return this.create(current);
+    }
 
-  private update() {
-    this.composedView.update(this.composeUse);
-  }
-
-  private destroy() {
-    this.composedView.destroy();
-  }
-}
-
-@Directive({ selector: '[return]' })
-export class ReturnDirective implements OnDestroy {
-  @Input() set return(value: any) {
-    if (this.templateRefsChanged) {
-      this.previousTemplateRefs = this.templateRefs;
-      this.composedView.render(value, this.templateRefs);
-    } else {
-      this.composedView.update(value);
+    if (this.viewRef.destroyed || current !== previous) {
+      this.destroy();
+      return this.onTemplateRefsDidChanged(current, null);
     }
   }
 
-  private composedView: ComposedView;
-
-  private previousTemplateRefs: TemplateRef<ComposedContext>[];
-
-  private get templateRefs(): TemplateRef<ComposedContext>[] {
-    const view = (this.viewContainerRef.injector as any).view;
-    const context: ComposedContext = findParentContext(view);
-    return context.templateRefs;
+  private create(templateRefs) {
+    this.context.compose = this.context.$implicit = this.createComposeFn(templateRefs);
+    this.viewRef =
+      this.viewContainerRef.createEmbeddedView(this.templateRef, this.context);
   }
 
-  private get templateRefsChanged(): boolean {
-    return this.previousTemplateRefs !== this.templateRefs;
+  private destroy() {
+    if (this.viewRef && !this.viewRef.destroyed) {
+      this.viewRef.destroy();
+    }
+
+    this.viewRef = null;
   }
 
-  constructor(private viewContainerRef: ViewContainerRef) {
-    this.composedView = new ComposedView(viewContainerRef);
+  private createComposeFn(templateRefs: TemplateRef<any>[]): ComposeFn<any> {
+    return (templateRef: TemplateRef<any> | ComposedView<any>): ComposedView<any> => {
+      return new ComposedView<any>(
+        this.viewContainerRef,
+        [ ...templateRefs, templateRef ]
+      );
+    };
   }
-
-  ngOnDestroy() {
-    this.composedView.destroy();
-  }
-
-}
-
-function findParentContext(view: any): ComposedContext {
-  const context: any = view.context;
-
-  if (isComposedContext(context)) {
-    return context;
-  }
-
-  return findParentContext(view.parent);
-}
-
-function isComposedContext(context: any): context is ComposedContext {
-  return context && context[ COMPOSED_CONTEXT_TOKEN ];
 }
