@@ -1,5 +1,6 @@
 import { ANALYZE_FOR_ENTRY_COMPONENTS, ModuleWithProviders, NgModule, Type } from '@angular/core';
 import { AsyncDirective, ComposeDirective, CookiesDirective, HttpDirective, InitDirective, LAZY_COMPONENT_TOKEN, LazyDirective, NestDirective, RenamePropDirective, ReturnDirective, RouteDirective, SetPropsDirective, TimeoutDirective } from './directives';
+import { CallPipe } from './pipes';
 
 const DIRECTIVES = [
   AsyncDirective,
@@ -16,10 +17,14 @@ const DIRECTIVES = [
   TimeoutDirective
 ];
 
+const PIPES = [
+  CallPipe
+];
+
 @NgModule({
   imports: [],
-  declarations: [ DIRECTIVES ],
-  exports: [ DIRECTIVES ]
+  declarations: [ DIRECTIVES, PIPES ],
+  exports: [ DIRECTIVES, PIPES ]
 })
 export class NgxfModule {
   static forLazy(component: Type<any>): ModuleWithProviders {
