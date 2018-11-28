@@ -1,5 +1,21 @@
 import { ANALYZE_FOR_ENTRY_COMPONENTS, ModuleWithProviders, NgModule, Type } from '@angular/core';
-import { AsyncDirective, ComposeDirective, CookiesDirective, HttpDirective, InitDirective, LAZY_COMPONENT_TOKEN, LazyDirective, NestDirective, RenamePropDirective, ReturnDirective, RouteDirective, SetPropsDirective, TimeoutDirective } from './directives';
+import {
+  AsyncDirective,
+  ComposeDirective,
+  CookiesDirective,
+  HttpDirective,
+  InitDirective,
+  LAZY_COMPONENT_TOKEN,
+  LazyDirective,
+  NestDirective,
+  RenamePropDirective,
+  ReturnDirective,
+  RouteDirective,
+  SetPropsDirective,
+  TimeoutDirective,
+  UseReducerDirective,
+  UseStateDirective
+} from './directives';
 import { CallPipe } from './pipes';
 
 const DIRECTIVES = [
@@ -14,7 +30,9 @@ const DIRECTIVES = [
   ReturnDirective,
   RouteDirective,
   SetPropsDirective,
-  TimeoutDirective
+  TimeoutDirective,
+  UseReducerDirective,
+  UseStateDirective
 ];
 
 const PIPES = [
