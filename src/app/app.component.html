@@ -1,6 +1,89 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<router-outlet></router-outlet>
+<!--<router-outlet></router-outlet>-->
 
-<ng-container *cookies="let cookie set 'ngxf' value 'Best Of The Best' path '/' domain 'localhost' expires '01 Oct 2020'">{{ cookie }}</ng-container>
-<ng-container *cookies="let cookie get 'ngxf'">{{ cookie }}</ng-container>
-<ng-container *cookies="let cookie remove 'ngxf' path '/' domain 'localhost'">{{ cookie }}</ng-container>
+<ng-container *socketIO="let socket of 'http://185.228.234.111:4201'">
+  <ng-container *useReducer="let store init reducer with defaultState">
+    <ng-container *ngTemplateOutlet="
+      listeners context { socket: socket, store: store }"></ng-container>
+
+    <div class="cursor-field" (mousemove)="
+      socket.emit('move', { x: $event.clientX, y: $event.clientY })">
+      <ng-container *ngTemplateOutlet="
+        clicker context { socket: socket, store: store }"></ng-container>
+      <ng-container *ngTemplateOutlet="
+        cursors context { store: store }"></ng-container>
+    </div>
+
+    <ng-container *ngTemplateOutlet="
+        chat context { socket: socket, store: store }"></ng-container>
+  </ng-container>
+</ng-container>
+
+<ng-template #listeners let-socket="socket" let-store="store">
+  <ng-container *socketIOOn="let value on 'init' from socket">
+    {{ store.dispatch({type: 'init', payload: value}) }}
+    {{ socket.emit('init', {name: store.state.name, color: store.state.color}) }}
+  </ng-container>
+  <ng-container *socketIOOn="let value on 'new-init' from socket">
+    {{ store.dispatch({type: 'new-init', payload: value}) }}
+  </ng-container>
+  <ng-container *socketIOOn="let value on 'cursor-leave' from socket">
+    {{ store.dispatch({type: 'cursor-leave', payload: value}) }}
+  </ng-container>
+  <ng-container *socketIOOn="let value on 'message' from socket">
+    {{ store.dispatch({type: 'message', payload: value}) }}
+  </ng-container>
+  <ng-container *socketIOOn="let value on 'move' from socket">
+    {{ store.dispatch({type: 'move', payload: value}) }}
+  </ng-container>
+  <ng-container *socketIOOn="let value on 'click' from socket">
+    {{ store.dispatch({type: 'click', payload: value}) }}
+  </ng-container>
+</ng-template>
+
+
+<ng-template #chat let-socket="socket" let-store="store">
+  <div class="chat">
+    <div class="input">
+      <input type="text" placeholder="write message" class="form-control" #text
+             (keydown.enter)="
+              socket.emit('message', {
+                message: text.value,
+                name: store.state.name,
+                color: store.state.color
+              });
+              text.value = '';
+             ">
+    </div>
+    <div class="messages">
+      <ng-container *ngFor="let message of store.state.messages; trackBy: trackById">
+        <div class="message">
+            <span class="sender mr-2" [style.color]="message.color">
+              {{message.name}}:
+            </span>{{message.message}}
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #clicker let-socket="socket" let-store="store">
+  <div class="clicker" [style.color]="'green'">
+    <div class="click-block" [style.border-color]="'green'" (click)="socket.emit('click');">
+      click me
+    </div>
+    <div class="count">{{store.state.countClicks[0]}}</div>
+    <div *ngFor="let user of store.state.countClicks[1] | keyvalue; trackBy: trackById">
+      {{ user.key }}: {{ user.value }}
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #cursors let-store="store">
+  <ng-container *ngFor="let cursor of store.state.cursors | keyvalue; trackBy: trackById">
+    <div class="cursor" [style.top.px]="cursor.value.y" [style.left.px]="cursor.value.x">
+      <div class="name" [style.color]="cursor.value.color">{{cursor.value.name}}</div>
+      <i class="fas fa-mouse-pointer" [style.color]="cursor.value.color"></i>
+    </div>
+  </ng-container>
+</ng-template>
