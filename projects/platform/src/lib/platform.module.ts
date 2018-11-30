@@ -13,6 +13,7 @@ import {
   RouteDirective,
   SetPropsDirective,
   TimeoutDirective,
+  UseEffectDirective,
   UseReducerDirective,
   UseStateDirective
 } from './directives';
@@ -32,7 +33,8 @@ const DIRECTIVES = [
   SetPropsDirective,
   TimeoutDirective,
   UseReducerDirective,
-  UseStateDirective
+  UseStateDirective,
+  UseEffectDirective
 ];
 
 const PIPES = [

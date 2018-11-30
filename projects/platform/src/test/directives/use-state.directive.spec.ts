@@ -14,9 +14,9 @@ describe('UseStateDirective', () => {
 
   it('should create state through template', () => {
     host = create(`
-      <ng-container *useState="let x of 0">
-        Count: {{ x.get }}
-        <button id="increment" (click)="x.set(x.get + 1)">Increment</button>
+      <ng-container *useState="let x default 0">
+        Count: {{ x }}
+        <button id="increment" (click)="x = x + 1">Increment</button>
       </ng-container>
     `);
 

@@ -12,31 +12,31 @@ interface UseStateContext<T = any> {
   selector: '[useState]'
 })
 export class UseStateDirective implements OnChanges, OnDestroy {
-  @Input() useStateOf: any;
+  @Input() useStateDefault: any;
 
-  private context: UseStateContext = {
-    $implicit: {
-      get: this.useStateOf,
-      set(value: any) {
-        this.get = value;
-        this.detectChanges();
-      },
-      detectChanges: () => {
-        this.embeddedViewRef.detectChanges();
-      }
-    }
-  };
-  private embeddedViewRef: EmbeddedViewRef<UseStateContext> =
-    this.vcr.createEmbeddedView(this.templateRef, this.context);
+  private context: UseStateContext = {} as any;
+  private embeddedViewRef: EmbeddedViewRef<UseStateContext>;
+  private value: any;
 
   constructor(
     private templateRef: TemplateRef<UseStateContext>,
     private vcr: ViewContainerRef
-  ) {}
+  ) {
+    Object.defineProperty(this.context, '$implicit', {
+      get: () => this.value,
+      set: (value) => {
+        this.value = value;
+        if (this.embeddedViewRef) {
+          this.embeddedViewRef.detectChanges();
+        }
+      }
+    });
+    this.embeddedViewRef = this.vcr.createEmbeddedView(this.templateRef, this.context);
+  }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.useStateOf) {
-      this.context.$implicit.get = this.useStateOf;
+    if (changes.useStateDefault) {
+      this.value = this.useStateDefault;
     }
   }
 

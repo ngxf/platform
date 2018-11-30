@@ -12,3 +12,4 @@ export * from './set-props.directive';
 export * from './timeout.directive';
 export * from './use-reducer.directive';
 export * from './use-state.directive';
+export * from './use-effect.directive';
