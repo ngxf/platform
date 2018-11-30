@@ -1,3 +1,22 @@
+<a name="6.0.8"></a>
+## 6.0.8 (2018-11-30)
+
+
+### Features
+
+* **core:** added new directives: useState and useReducer ([6f00d00](https://github.com/ngxf/platform/commit/6f00d00))
+* **core:** added new pipe CallPipe to call component methods are pure pipes ([446e298](https://github.com/ngxf/platform/commit/446e298))
+* **core:** added new react hook *useEffect ([b9dcf51](https://github.com/ngxf/platform/commit/b9dcf51))
+* **core:** refactor HOC compose and return, added HOC nest, renameProp and setProps directives ([de63285](https://github.com/ngxf/platform/commit/de63285))
+* **core:** support socket.io! ([6a242f1](https://github.com/ngxf/platform/commit/6a242f1))
+
+
+### BREAKING CHANGES
+
+* **core:** Now *compose returns enhancer
+
+
+
 <a name="6.0.5"></a>
 ## 6.0.5 (2018-10-24)
 
