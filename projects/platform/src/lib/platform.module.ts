@@ -57,3 +57,5 @@ export class NgxfModule {
     };
   }
 }
+
+export * from './ivy-hooks';
