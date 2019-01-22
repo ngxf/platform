@@ -1,0 +1,9 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "examples": {
+      "description": "Generate examples boilerplate.",
+      "factory": "./examples/index#examples"
+    }
+  }
+}

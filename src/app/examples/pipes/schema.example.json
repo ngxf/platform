@@ -1,0 +1,10 @@
+{
+  "name": "Call Pipe",
+  "imports": [
+    "@ngxf/platform#NgfxModule"
+  ],
+  "components": [
+    "./call.pipe.example.ts#CallPipeExampleComponent"
+  ],
+  "bootstrap": "./call.pipe.example.ts#CallPipeExampleComponent"
+}

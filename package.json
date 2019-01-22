@@ -3,11 +3,19 @@
   "version": "6.0.8",
   "scripts": {
     "ng": "ng",
+    "tsc": "tsc",
     "start": "ng serve",
     "build": "ng build",
     "test": "npx jest -c jest.json",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:prerun": "cd ./schematics && npm install && cd ../schematics",
+    "build:dev-schematics": "npm run build:prerun && tsc -p ./schematics/tsconfig.json",
+    "build:dev-schematics-files": "cp ./schematics/src/* ./dist/dev-schematics",
+    "build:dev-schematics:watch": "npm run build:dev-schematics -- --watch",
+    "build:dev-schematics-files:watch": "npm run build:dev-schematics-files && nodemon -e json,ts,html,css --watch ./schematics/src --exec 'npm run build:dev-schematics-files'",
+    "run:dev-schematics": "npx ng g ./dist/dev-schematics/collection.json:examples --force",
+    "run:dev-schematics:watch": "concurrently 'npm:build:dev-schematics:watch' 'npm:build:dev-schematics-files:watch' 'npm:run:dev-schematics'"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +35,7 @@
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
     "rxjs": "6.3.3",
+    "schematics": "file:schematics",
     "socket.io-client": "^2.1.1",
     "zone.js": "~0.8.26"
   },
@@ -42,6 +51,7 @@
     "@types/node": "~8.9.4",
     "@types/socket.io-client": "^1.4.32",
     "codelyzer": "~4.3.0",
+    "concurrently": "^4.1.0",
     "cz-customizable": "^5.2.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
@@ -53,6 +63,7 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "ng-packagr": "^4.1.0",
+    "nodemon": "^1.18.9",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.29.0",
