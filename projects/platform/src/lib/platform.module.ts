@@ -15,7 +15,8 @@ import {
   TimeoutDirective,
   UseEffectDirective,
   UseReducerDirective,
-  UseStateDirective
+  UseStateDirective,
+  VirtualDirective
 } from './directives';
 import { CallPipe } from './pipes';
 
@@ -34,7 +35,8 @@ const DIRECTIVES = [
   TimeoutDirective,
   UseReducerDirective,
   UseStateDirective,
-  UseEffectDirective
+  UseEffectDirective,
+  VirtualDirective
 ];
 
 const PIPES = [

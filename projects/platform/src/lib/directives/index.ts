@@ -13,3 +13,4 @@ export * from './timeout.directive';
 export * from './use-reducer.directive';
 export * from './use-state.directive';
 export * from './use-effect.directive';
+export * from './virtual.directive';
