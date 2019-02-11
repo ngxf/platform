@@ -1,5 +1,23 @@
-<a name="6.0.8"></a>
-## 6.0.8 (2018-11-30)
+## [6.0.10](https://github.com/ngxf/platform/compare/6.0.9...6.0.10) (2019-02-11)
+
+
+### Bug Fixes
+
+* **core:** added AOT support ([6142b4e](https://github.com/ngxf/platform/commit/6142b4e)), closes [#3](https://github.com/ngxf/platform/issues/3)
+
+
+
+## [6.0.9](https://github.com/ngxf/platform/compare/6.0.8...6.0.9) (2019-01-30)
+
+
+### Features
+
+* **core:** added new directive for virtual scroll ([17105db](https://github.com/ngxf/platform/commit/17105db))
+* implements Ivy Hooks via Mixins ([9c99fae](https://github.com/ngxf/platform/commit/9c99fae))
+
+
+
+## [6.0.8](https://github.com/ngxf/platform/compare/6.0.5...6.0.8) (2018-11-30)
 
 
 ### Features
@@ -7,7 +25,7 @@
 * **core:** added new directives: useState and useReducer ([6f00d00](https://github.com/ngxf/platform/commit/6f00d00))
 * **core:** added new pipe CallPipe to call component methods are pure pipes ([446e298](https://github.com/ngxf/platform/commit/446e298))
 * **core:** added new react hook *useEffect ([b9dcf51](https://github.com/ngxf/platform/commit/b9dcf51))
-* **core:** refactor HOC compose and return, added HOC nest, renameProp and setProps directives ([de63285](https://github.com/ngxf/platform/commit/de63285))
+* **core:** refactor HOC: *compose, *return; added HOC: *nest, *renameProp, *setProps; implement ComposedView<C> ([de63285](https://github.com/ngxf/platform/commit/de63285))
 * **core:** support socket.io! ([6a242f1](https://github.com/ngxf/platform/commit/6a242f1))
 
 
@@ -17,8 +35,7 @@
 
 
 
-<a name="6.0.5"></a>
-## 6.0.5 (2018-10-24)
+## [6.0.5](https://github.com/ngxf/platform/compare/6.0.4...6.0.5) (2018-10-24)
 
 
 ### Bug Fixes
@@ -32,8 +49,7 @@
 
 
 
-<a name="6.0.4"></a>
-## 6.0.4 (2018-10-24)
+## [6.0.4](https://github.com/ngxf/platform/compare/6.0.3...6.0.4) (2018-10-24)
 
 
 ### Bug Fixes
@@ -45,11 +61,11 @@
 ### Features
 
 * **core:** added *async directive ([afdd2bd](https://github.com/ngxf/platform/commit/afdd2bd))
+* **core:** added *cookies directive ([145b047](https://github.com/ngxf/platform/commit/145b047))
 
 
 
-<a name="6.0.3"></a>
-## 6.0.3 (2018-10-07)
+## [6.0.3](https://github.com/ngxf/platform/compare/6.0.2...6.0.3) (2018-10-07)
 
 
 ### Bug Fixes
@@ -61,11 +77,11 @@
 
 * **core:** added *compose directive ([3f41dc7](https://github.com/ngxf/platform/commit/3f41dc7))
 * **core:** added *init directive ([0978dc0](https://github.com/ngxf/platform/commit/0978dc0))
+* **core:** added *init directive ([8ebd9df](https://github.com/ngxf/platform/commit/8ebd9df))
 
 
 
-<a name="6.0.2"></a>
-## 6.0.2 (2018-10-07)
+## [6.0.2](https://github.com/ngxf/platform/compare/6.0.1...6.0.2) (2018-10-07)
 
 
 ### Features
@@ -75,8 +91,7 @@
 
 
 
-<a name="6.0.1"></a>
-## 6.0.1 (2018-10-06)
+## [6.0.1](https://github.com/ngxf/platform/compare/21b6409...6.0.1) (2018-10-06)
 
 
 ### Features

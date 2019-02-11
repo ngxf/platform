@@ -1,6 +1,6 @@
 {
   "name": "ngxf",
-  "version": "6.0.9",
+  "version": "6.0.10",
   "scripts": {
     "ng": "ng",
     "tsc": "tsc",
@@ -9,6 +9,7 @@
     "test": "npx jest -c jest.json",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "build:prerun": "cd ./schematics && npm install && cd ../schematics",
     "build:dev-schematics": "npm run build:prerun && tsc -p ./schematics/tsconfig.json",
     "build:dev-schematics-files": "cp ./schematics/src/* ./dist/dev-schematics",
