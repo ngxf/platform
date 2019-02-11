@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Directive, ElementRef, Input, OnDestroy } from '@angular/core';
-import { VirtualHandler } from '../tools';
+import { VirtualHandler } from '../tools/virtual.handler';
 
 @Directive({ selector: '[virtual]' })
 export class VirtualDirective implements OnDestroy {

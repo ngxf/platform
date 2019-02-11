@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { fakeAsync } from '@angular/core/testing';
 import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectator';
-import { CallPipe } from '../../lib/pipes';
+import { CallPipe } from '../../lib/pipes/call.pipe';
 
 const TEXT = 'NGX Features Awesome';
 const TEXT2 = 'Really!';

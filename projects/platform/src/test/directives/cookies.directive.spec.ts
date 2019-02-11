@@ -1,5 +1,5 @@
 import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectator';
-import { CookiesDirective } from '../../lib/directives';
+import { CookiesDirective } from '../../lib/directives/cookies.directive';
 
 const NAME = 'ngxf';
 const VALUE = 'Best Of The Best';

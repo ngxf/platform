@@ -3,7 +3,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Component } from '@angular/core';
 import { fakeAsync } from '@angular/core/testing';
 import { createHostComponentFactory, HostComponent, HTTPMethod, SpectatorWithHost } from '@netbasal/spectator';
-import { HttpDirective } from '../../lib/directives';
+import { HttpDirective } from '../../lib/directives/http.directive';
 import { getHttp, HTTPMethods } from '../../testing';
 
 const RESPONSE = 'An Best Response';

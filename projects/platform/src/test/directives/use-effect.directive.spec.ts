@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectator';
-import { UseEffectDirective } from '../../lib/directives';
+import { UseEffectDirective } from '../../lib/directives/use-effect.directive';
 
 @Component({ selector: 'host', template: '' })
 class Host {

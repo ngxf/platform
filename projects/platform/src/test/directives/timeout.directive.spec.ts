@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { fakeAsync, tick } from '@angular/core/testing';
 import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectator';
-import { TimeoutDirective } from '../../lib/directives';
+import { TimeoutDirective } from '../../lib/directives/timeout.directive';
 
 @Component({ selector: 'host', template: '' })
 class Host { timeout: number; }

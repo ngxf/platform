@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
-import { SocketIODirective, SocketIOOnDirective } from './directives';
+import { SocketIODirective } from './directives/socket.io.directive';
+import { SocketIOOnDirective } from './directives/socket.io.on.directive';
 
 const DIRECTIVES = [
   SocketIODirective,

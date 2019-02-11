@@ -2,7 +2,7 @@ import { ANALYZE_FOR_ENTRY_COMPONENTS, Component, NgModule, NgModuleFactoryLoade
 import { fakeAsync, tick } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectator';
-import { LAZY_COMPONENT_TOKEN, LazyDirective } from '../../lib/directives';
+import { LAZY_COMPONENT_TOKEN, LazyDirective } from '../../lib/directives/lazy.directive';
 
 @Component({ selector: 'host', template: '' })
 class Host {

@@ -1,5 +1,5 @@
 import { Directive, Input, OnChanges, OnDestroy, SimpleChanges, ViewContainerRef } from '@angular/core';
-import { ComposedView } from '../tools/recompose';
+import { ComposedView } from '../tools/recompose/composed.view';
 
 interface ReturnContext {}
 

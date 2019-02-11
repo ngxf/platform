@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectator';
-import { RenamePropDirective, ComposeDirective } from '../../lib/directives';
+import { ComposeDirective } from '../../lib/directives/compose.directive';
+import { RenamePropDirective } from '../../lib/directives/rename-prop.directive';
 
 @Component({ selector: 'host', template: '' })
 class Host {}

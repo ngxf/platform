@@ -1,6 +1,6 @@
 import { Directive, Input, OnChanges, OnDestroy, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
-import { ComposedView } from '../tools';
-import { omit } from '../tools';
+import { ComposedView } from '../tools/recompose/composed.view';
+import { omit } from '../tools/utils/index';
 
 interface RenamePropContext {};
 

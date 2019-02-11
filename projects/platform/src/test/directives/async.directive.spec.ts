@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { fakeAsync, tick } from '@angular/core/testing';
 import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectator';
 import { from, Observable, of, throwError } from 'rxjs';
-import { AsyncDirective } from '../../lib/directives';
+import { AsyncDirective } from '../../lib/directives/async.directive';
 
 @Component({ selector: 'host', template: '' })
 class Host {

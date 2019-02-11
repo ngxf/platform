@@ -3,7 +3,7 @@ import { Directive, Input, OnDestroy, TemplateRef, ViewContainerRef } from '@ang
 @Directive({ selector: '[timeout]' })
 export class TimeoutDirective implements OnDestroy {
 
-  private timeoutId: number;
+  private timeoutId: any;
 
   constructor(
     private templateRef: TemplateRef<null>,

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectator';
-import { UseReducerDirective } from '../../lib/directives';
+import { UseReducerDirective } from '../../lib/directives/use-reducer.directive';
 
 @Component({ selector: 'host', template: '' })
 class Host {

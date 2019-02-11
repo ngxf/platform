@@ -1,5 +1,5 @@
 import { Directive, Input, OnChanges, OnDestroy, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
-import { ComposedView } from '../tools';
+import { ComposedView } from '../tools/recompose/composed.view';
 
 interface SetPropsContext {
   $implicit: any;

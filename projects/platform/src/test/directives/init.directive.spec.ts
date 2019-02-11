@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectator';
-import { InitDirective } from '../../lib/directives';
+import { InitDirective } from '../../lib/directives/init.directive';
 
 @Component({ selector: 'host', template: '' })
 class Host {example: string;}
