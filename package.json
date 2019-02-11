@@ -32,7 +32,6 @@
     "@angular/pwa": "^0.8.4",
     "@angular/router": "7.2.1",
     "@angular/service-worker": "7.2.1",
-    "@ngxd/core": "7.0.1",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
     "rxjs": "6.3.3",
