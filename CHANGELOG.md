@@ -1,4 +1,13 @@
-## [6.0.10](https://github.com/ngxf/platform/compare/6.0.9...6.0.10) (2019-02-11)
+## [6.0.11](https://github.com/ngxf/platform/compare/v6.0.10...v6.0.11) (2019-03-15)
+
+
+### Features
+
+* **core:** added directive NgForTrackByKey ([dc64928](https://github.com/ngxf/platform/commit/dc64928))
+
+
+
+## [6.0.10](https://github.com/ngxf/platform/compare/v6.0.9...v6.0.10) (2019-02-11)
 
 
 ### Bug Fixes
@@ -7,7 +16,7 @@
 
 
 
-## [6.0.9](https://github.com/ngxf/platform/compare/6.0.8...6.0.9) (2019-01-30)
+## [6.0.9](https://github.com/ngxf/platform/compare/v6.0.8...v6.0.9) (2019-01-30)
 
 
 ### Features
@@ -17,7 +26,7 @@
 
 
 
-## [6.0.8](https://github.com/ngxf/platform/compare/6.0.5...6.0.8) (2018-11-30)
+## [6.0.8](https://github.com/ngxf/platform/compare/v6.0.5...v6.0.8) (2018-11-30)
 
 
 ### Features
@@ -35,7 +44,7 @@
 
 
 
-## [6.0.5](https://github.com/ngxf/platform/compare/6.0.4...6.0.5) (2018-10-24)
+## [6.0.5](https://github.com/ngxf/platform/compare/v6.0.4...v6.0.5) (2018-10-24)
 
 
 ### Bug Fixes
@@ -49,7 +58,7 @@
 
 
 
-## [6.0.4](https://github.com/ngxf/platform/compare/6.0.3...6.0.4) (2018-10-24)
+## [6.0.4](https://github.com/ngxf/platform/compare/v6.0.3...v6.0.4) (2018-10-24)
 
 
 ### Bug Fixes
@@ -65,7 +74,7 @@
 
 
 
-## [6.0.3](https://github.com/ngxf/platform/compare/6.0.2...6.0.3) (2018-10-07)
+## [6.0.3](https://github.com/ngxf/platform/compare/v6.0.2...v6.0.3) (2018-10-07)
 
 
 ### Bug Fixes
@@ -81,7 +90,7 @@
 
 
 
-## [6.0.2](https://github.com/ngxf/platform/compare/6.0.1...6.0.2) (2018-10-07)
+## [6.0.2](https://github.com/ngxf/platform/compare/v6.0.1...v6.0.2) (2018-10-07)
 
 
 ### Features
@@ -91,7 +100,7 @@
 
 
 
-## [6.0.1](https://github.com/ngxf/platform/compare/21b6409...6.0.1) (2018-10-06)
+## [6.0.1](https://github.com/ngxf/platform/compare/21b6409...v6.0.1) (2018-10-06)
 
 
 ### Features
