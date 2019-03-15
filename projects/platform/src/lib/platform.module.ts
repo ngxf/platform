@@ -12,6 +12,7 @@ import { ReturnDirective } from './directives/return.directive';
 import { RouteDirective } from './directives/route.directive';
 import { SetPropsDirective } from './directives/set-props.directive';
 import { TimeoutDirective } from './directives/timeout.directive';
+import { NgForTrackByKeyDirective } from './directives/track-by-key.directive';
 import { UseEffectDirective } from './directives/use-effect.directive';
 import { UseReducerDirective } from './directives/use-reducer.directive';
 import { UseStateDirective } from './directives/use-state.directive';
@@ -32,6 +33,7 @@ const DIRECTIVES = [
   RouteDirective,
   SetPropsDirective,
   TimeoutDirective,
+  NgForTrackByKeyDirective,
   UseReducerDirective,
   UseStateDirective,
   UseEffectDirective,
