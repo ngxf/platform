@@ -19,6 +19,7 @@ import { UseStateDirective } from './directives/use-state.directive';
 import { VirtualDirective } from './directives/virtual.directive';
 
 import { CallPipe } from './pipes/call.pipe';
+import { LogPipe } from './pipes/log.pipe';
 
 const DIRECTIVES = [
   AsyncDirective,
@@ -41,7 +42,8 @@ const DIRECTIVES = [
 ];
 
 const PIPES = [
-  CallPipe
+  CallPipe,
+  LogPipe
 ];
 
 @NgModule({
