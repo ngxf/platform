@@ -19,6 +19,7 @@ import { UseStateDirective } from './directives/use-state.directive';
 import { VirtualDirective } from './directives/virtual.directive';
 
 import { CallPipe } from './pipes/call.pipe';
+import { ConsolePipe } from './pipes/console.pipe';
 
 const DIRECTIVES = [
   AsyncDirective,
@@ -41,7 +42,8 @@ const DIRECTIVES = [
 ];
 
 const PIPES = [
-  CallPipe
+  CallPipe,
+  ConsolePipe
 ];
 
 @NgModule({
@@ -60,6 +62,27 @@ export class NgxfModule {
     };
   }
 }
+
+export { AsyncDirective } from './directives/async.directive';
+export { ComposeDirective } from './directives/compose.directive';
+export { CookiesDirective } from './directives/cookies.directive';
+export { HttpDirective } from './directives/http.directive';
+export { InitDirective } from './directives/init.directive';
+export { LazyDirective, LAZY_COMPONENT_TOKEN } from './directives/lazy.directive';
+export { NestDirective } from './directives/nest.directive';
+export { RenamePropDirective } from './directives/rename-prop.directive';
+export { ReturnDirective } from './directives/return.directive';
+export { RouteDirective } from './directives/route.directive';
+export { SetPropsDirective } from './directives/set-props.directive';
+export { TimeoutDirective } from './directives/timeout.directive';
+export { NgForTrackByKeyDirective } from './directives/track-by-key.directive';
+export { UseEffectDirective } from './directives/use-effect.directive';
+export { UseReducerDirective } from './directives/use-reducer.directive';
+export { UseStateDirective } from './directives/use-state.directive';
+export { VirtualDirective } from './directives/virtual.directive';
+
+export { CallPipe } from './pipes/call.pipe';
+export { ConsolePipe } from './pipes/console.pipe';
 
 export { UseEffect } from './ivy-hooks/use-effect.hook';
 export { UseReducer } from './ivy-hooks/use-reducer.hook';
