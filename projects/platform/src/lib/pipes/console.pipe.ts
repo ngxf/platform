@@ -1,8 +1,12 @@
 import { Inject, InjectionToken, Pipe, PipeTransform } from '@angular/core';
 
+export function consoleFactory() {
+  return console;
+}
+
 export const CONSOLE = new InjectionToken<Console>('Console', {
   providedIn: 'root',
-  factory: () => console
+  factory: consoleFactory
 });
 
 export const skipValueOperators = [
@@ -19,12 +23,14 @@ export const skipValueOperators = [
   'groupCollapsed'
 ];
 
+interface IConsole extends Console {}
+
 @Pipe({
   name: 'console'
 })
 export class ConsolePipe implements PipeTransform {
 
-  constructor(@Inject(CONSOLE) private console: Console) {}
+  constructor(@Inject(CONSOLE) private console: IConsole) {}
 
   // info(message?: any, ...optionalParams): void;
   transform<T>(message: T, logLevel: 'info', ...optionalParams: any[]): T;
@@ -41,7 +47,7 @@ export class ConsolePipe implements PipeTransform {
   // trace(message?: any, ...optionalParams: any[]): void;
   transform<T>(message: T, logLevel: 'trace', ...optionalParams: any[]): T;
   // dir(obj: any, options?: NodeJS.InspectOptions): void;
-  transform<T>(obj: T, logLevel: 'dir', options?: NodeJS.InspectOptions): T;
+  transform<T>(obj: T, logLevel: 'dir'/*, options?: NodeJS.InspectOptions*/): T;
   // dirxml(value: any): void;
   transform<T>(value: T, logLevel: 'dirxml'): T;
   // table(...tabularData): void;
