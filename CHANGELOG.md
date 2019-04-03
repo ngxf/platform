@@ -1,6 +1,11 @@
 ## [6.0.12](https://github.com/ngxf/platform/compare/v6.0.11...v6.0.12) (2019-04-03)
 
 
+### Features
+
+* **core:** added ConsolePipe: "item | console" will output to console ([f03c1ed](https://github.com/ngxf/platform/commit/f03c1ed))
+
+
 
 ## [6.0.11](https://github.com/ngxf/platform/compare/v6.0.10...v6.0.11) (2019-03-15)
 
