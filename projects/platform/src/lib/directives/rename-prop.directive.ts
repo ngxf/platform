@@ -2,7 +2,9 @@ import { Directive, Input, OnChanges, OnDestroy, SimpleChanges, TemplateRef, Vie
 import { ComposedView } from '../tools/recompose/composed.view';
 import { omit } from '../tools/utils/index';
 
-interface RenamePropContext {};
+interface RenamePropContext {
+  $implicit: null;
+}
 
 @Directive({ selector: '[renameProp]' })
 export class RenamePropDirective implements OnChanges, OnDestroy {
@@ -10,7 +12,9 @@ export class RenamePropDirective implements OnChanges, OnDestroy {
   @Input() renameProp: string;
   @Input() renamePropTo: string;
 
-  private context: RenamePropContext = {};
+  private context: RenamePropContext = {
+    $implicit: null
+  };
   private composedView: ComposedView<RenamePropContext>;
 
   constructor(

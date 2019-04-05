@@ -1,5 +1,5 @@
-import { OnDestroy, Directive, Type, TemplateRef, ViewContainerRef, EmbeddedViewRef } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot, UrlSegment, Params, Data, Route, ParamMap, convertToParamMap } from '@angular/router';
+import { Directive, EmbeddedViewRef, OnDestroy, TemplateRef, Type, ViewContainerRef } from '@angular/core';
+import { ActivatedRoute, ActivatedRouteSnapshot, convertToParamMap, Data, ParamMap, Params, Route, UrlSegment } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
 

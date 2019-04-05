@@ -3,16 +3,18 @@ import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectat
 import { InitDirective } from '../../lib/directives/init.directive';
 
 @Component({ selector: 'host', template: '' })
-class Host {example: string;}
+class HostComponent {
+  example: string;
+}
 
 const VALUE_THROUGH_BINDING = 'value through binding';
 const VALUE_IN_TEMPLATE = 'value in template';
 
 describe('InitDirective', () => {
-  let host: SpectatorWithHost<InitDirective, Host>;
+  let host: SpectatorWithHost<InitDirective, HostComponent>;
   const create = createHostComponentFactory({
     component: InitDirective,
-    host: Host
+    host: HostComponent
   });
 
   describe('using letOf', () => {

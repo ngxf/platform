@@ -4,7 +4,12 @@
   NGXF is a non-state management pattern + library for Angular
   <br />
   <br />
-  <a href="https://badge.fury.io/js/%40ngxf%2Fplatform"><img src="https://badge.fury.io/js/%40ngxf%2Fplatform.svg"></a>
+  <a href="https://www.npmjs.com/package/@ngxf/platform">
+    <img alt="npm (scoped)" src="https://img.shields.io/npm/v/@ngxf/platform.svg?style=flat-square">
+  </a>
+  <a href="https://travis-ci.com/ngxf/platform">
+    <img alt="Travis (.com)" src="https://img.shields.io/travis/com/ngxf/platform.svg?style=flat-square">
+  </a>
 </p>
 
 ## :interrobang: What is NGXF?

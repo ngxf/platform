@@ -4,17 +4,17 @@ import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectat
 import { TimeoutDirective } from '../../lib/directives/timeout.directive';
 
 @Component({ selector: 'host', template: '' })
-class Host { timeout: number; }
+class HostComponent { timeout: number; }
 
 const TIMEOUT_500 = 500;
 const TIMEOUT_1000 = 1000;
 const TEXT = 'timeout works';
 
 describe('TimeoutDirective', () => {
-  let host: SpectatorWithHost<TimeoutDirective, Host>;
+  let host: SpectatorWithHost<TimeoutDirective, HostComponent>;
   const create = createHostComponentFactory({
     component: TimeoutDirective,
-    host: Host
+    host: HostComponent
   });
 
   it('should create timeout through template', fakeAsync(() => {

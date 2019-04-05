@@ -1,4 +1,23 @@
-import { ComponentFactory, ComponentRef, Directive, EmbeddedViewRef, EventEmitter, InjectionToken, Injector, Input, NgModuleFactory, NgModuleFactoryLoader, NgModuleRef, OnChanges, OnDestroy, Output, SimpleChanges, TemplateRef, Type, ViewContainerRef } from '@angular/core';
+import {
+  ComponentFactory,
+  ComponentRef,
+  Directive,
+  EmbeddedViewRef,
+  EventEmitter,
+  InjectionToken,
+  Injector,
+  Input,
+  NgModuleFactory,
+  NgModuleFactoryLoader,
+  NgModuleRef,
+  OnChanges,
+  OnDestroy,
+  Output,
+  SimpleChanges,
+  TemplateRef,
+  Type,
+  ViewContainerRef
+} from '@angular/core';
 import { from, Observable, SubscriptionLike } from 'rxjs';
 import { catchError, finalize, tap } from 'rxjs/operators';
 

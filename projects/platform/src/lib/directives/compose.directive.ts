@@ -1,5 +1,5 @@
 import { Directive, EmbeddedViewRef, Input, OnChanges, OnDestroy, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
-import { ComposedContext, ComposedView } from '../tools/recompose/composed.view';
+import { ComposedView } from '../tools/recompose/composed.view';
 
 interface ComposeContext {
   $implicit: ComposeFn<any>;

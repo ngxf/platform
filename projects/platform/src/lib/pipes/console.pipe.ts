@@ -23,14 +23,12 @@ export const skipValueOperators = [
   'groupCollapsed'
 ];
 
-interface IConsole extends Console {}
-
 @Pipe({
   name: 'console'
 })
 export class ConsolePipe implements PipeTransform {
 
-  constructor(@Inject(CONSOLE) private console: IConsole) {}
+  constructor(@Inject(CONSOLE) private console: any) {}
 
   // info(message?: any, ...optionalParams): void;
   transform<T>(message: T, logLevel: 'info', ...optionalParams: any[]): T;

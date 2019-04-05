@@ -3,7 +3,7 @@ import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectat
 import { UseReducerDirective } from '../../lib/directives/use-reducer.directive';
 
 @Component({ selector: 'host', template: '' })
-class Host {
+class HostComponent {
 
   action = {
     type: 'reset',
@@ -31,10 +31,10 @@ class Host {
 }
 
 describe('UseReducerDirective', () => {
-  let host: SpectatorWithHost<UseReducerDirective, Host>;
+  let host: SpectatorWithHost<UseReducerDirective, HostComponent>;
   const create = createHostComponentFactory({
     component: UseReducerDirective,
-    host: Host
+    host: HostComponent
   });
 
   it('should create reducer through template', () => {

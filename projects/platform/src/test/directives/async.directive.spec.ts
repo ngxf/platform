@@ -5,7 +5,7 @@ import { from, Observable, of, throwError } from 'rxjs';
 import { AsyncDirective } from '../../lib/directives/async.directive';
 
 @Component({ selector: 'host', template: '' })
-class Host {
+class HostComponent {
   async: Observable<any> | Promise<any>;
 
   next($event) {}
@@ -18,14 +18,20 @@ class Host {
 const ERROR_VALUE = 'Async Error';
 const NEXT_VALUE = 'Async Data';
 
-const structuralTemplate = `<ng-container *async="let data from async; next next; error error; complete complete">{{ data }}</ng-container>`;
-const bindingTemplate = `<ng-template [async]="async" (next)="next($event)" (error)="error($event)" (complete)="complete($event)" let-data>{{ data }}</ng-template>`;
+const structuralTemplate = `
+  <ng-container *async="
+    let data from async; next next; error error; complete complete
+  ">{{ data }}</ng-container>
+`;
+const bindingTemplate = `
+  <ng-template [async]="async" (next)="next($event)"
+    (error)="error($event)" (complete)="complete($event)" let-data>{{ data }}</ng-template>`;
 
 describe('AsyncDirective', () => {
-  let host: SpectatorWithHost<AsyncDirective, Host>;
+  let host: SpectatorWithHost<AsyncDirective, HostComponent>;
   const create = createHostComponentFactory({
     component: AsyncDirective,
-    host: Host
+    host: HostComponent
   });
 
   [
@@ -93,7 +99,7 @@ describe('AsyncDirective', () => {
 
 });
 
-function spyHost(host: Host) {
+function spyHost(host: HostComponent) {
   spyOn(host, 'next').and.callThrough();
   spyOn(host, 'error').and.callThrough();
   spyOn(host, 'complete').and.callThrough();
