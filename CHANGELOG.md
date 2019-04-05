@@ -1,3 +1,18 @@
+## [6.0.13](https://github.com/ngxf/platform/compare/v6.0.12...v6.0.13) (2019-04-05)
+
+
+### Bug Fixes
+
+* **core:** fixes build ([87f3595](https://github.com/ngxf/platform/commit/87f3595))
+* **core:** fixes clear view after value changes ([5129eed](https://github.com/ngxf/platform/commit/5129eed))
+
+
+### Features
+
+* **core:** added new syntax for init: *init="EXPRESSION as variable" ([773a4cc](https://github.com/ngxf/platform/commit/773a4cc))
+
+
+
 ## [6.0.12](https://github.com/ngxf/platform/compare/v6.0.11...v6.0.12) (2019-04-03)
 
 
