@@ -3,7 +3,7 @@ import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectat
 import { UseEffectDirective } from '../../lib/directives/use-effect.directive';
 
 @Component({ selector: 'host', template: '' })
-class Host {
+class HostComponent {
   a;
   x;
 
@@ -15,10 +15,10 @@ class Host {
 }
 
 describe('UseEffectDirective', () => {
-  let host: SpectatorWithHost<UseEffectDirective, Host>;
+  let host: SpectatorWithHost<UseEffectDirective, HostComponent>;
   const create = createHostComponentFactory({
     component: UseEffectDirective,
-    host: Host
+    host: HostComponent
   });
 
   it('should recreate effect when x changed', () => {

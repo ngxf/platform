@@ -4,7 +4,7 @@ import { ComposeDirective } from '../../lib/directives/compose.directive';
 import { ReturnDirective } from '../../lib/directives/return.directive';
 
 @Component({ selector: 'host', template: '' })
-class Host {}
+class HostComponent {}
 
 const TEMPLATE = `
 <ng-template #return let-text="text">
@@ -19,10 +19,10 @@ const TEMPLATE = `
 `;
 
 describe('ReturnDirective', () => {
-  let host: SpectatorWithHost<ReturnDirective, Host>;
+  let host: SpectatorWithHost<ReturnDirective, HostComponent>;
   const create = createHostComponentFactory({
     component: ReturnDirective,
-    host: Host,
+    host: HostComponent,
     declarations: [ ComposeDirective ]
   });
 

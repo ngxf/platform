@@ -7,7 +7,7 @@ const TEXT = 'NGX Features Awesome';
 const OPTIONAL_PARAMS = [ '🦊', '🙀', '🐉', '🦄' ];
 
 @Component({ selector: 'host', template: '' })
-class Host {
+class HostComponent {
   text: string = TEXT;
 }
 
@@ -41,12 +41,12 @@ const operators = [
 const normalOperators = operators.filter((operator) => !skipValueOperators.includes(operator));
 
 describe('ConsolePipe', () => {
-  let host: SpectatorWithHost<Host, Host>;
+  let host: SpectatorWithHost<HostComponent, HostComponent>;
   const mock = {} as Console;
   operators.forEach((operator) => mock[operator] = () => {});
   const create = createHostComponentFactory({
-    host: Host,
-    component: Host,
+    host: HostComponent,
+    component: HostComponent,
     declarations: [ ConsolePipe ],
     componentProviders: [ { provide: CONSOLE, useValue: mock } ]
   });

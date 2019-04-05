@@ -1,4 +1,4 @@
-import { Directive, Input, TemplateRef, ViewContainerRef, EmbeddedViewRef, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
+import { Directive, EmbeddedViewRef, Input, OnChanges, OnDestroy, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
 import { CookieOptionsArgs, CookiesService } from '../tools/cookies.tools';
 
 enum CookiesStrategies {

@@ -3,13 +3,13 @@ import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectat
 import { UseStateDirective } from '../../lib/directives/use-state.directive';
 
 @Component({ selector: 'host', template: '' })
-class Host {}
+class HostComponent {}
 
 describe('UseStateDirective', () => {
-  let host: SpectatorWithHost<UseStateDirective, Host>;
+  let host: SpectatorWithHost<UseStateDirective, HostComponent>;
   const create = createHostComponentFactory({
     component: UseStateDirective,
-    host: Host
+    host: HostComponent
   });
 
   it('should create state through template', () => {

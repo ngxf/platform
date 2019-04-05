@@ -1,14 +1,18 @@
 import { Directive, Input, OnChanges, OnDestroy, SimpleChanges, ViewContainerRef } from '@angular/core';
 import { ComposedView } from '../tools/recompose/composed.view';
 
-interface ReturnContext {}
+interface ReturnContext {
+  $implicit: null;
+}
 
 @Directive({ selector: '[return]' })
 export class ReturnDirective implements OnChanges, OnDestroy {
 
   @Input() return: any;
 
-  private context: ReturnContext = {};
+  private context: ReturnContext = {
+    $implicit: null
+  };
   private composedView: ComposedView<ReturnContext>;
 
   constructor(private viewContainerRef: ViewContainerRef) {}

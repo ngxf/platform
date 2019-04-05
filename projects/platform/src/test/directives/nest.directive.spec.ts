@@ -3,7 +3,7 @@ import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectat
 import { NestDirective } from '../../lib/directives/nest.directive';
 
 @Component({ selector: 'host', template: '' })
-class Host {}
+class HostComponent {}
 
 const TEMPLATE = `
 <ng-template #greeting let-text let-children="children">
@@ -18,10 +18,10 @@ const TEMPLATE = `
 const EXPECTED = Array(3).fill('Hello, World!').join('  ');
 
 describe('NestDirective', () => {
-  let host: SpectatorWithHost<NestDirective, Host>;
+  let host: SpectatorWithHost<NestDirective, HostComponent>;
   const create = createHostComponentFactory({
     component: NestDirective,
-    host: Host
+    host: HostComponent
   });
 
   it('should create nested template', () => {

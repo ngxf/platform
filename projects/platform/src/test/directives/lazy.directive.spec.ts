@@ -5,7 +5,7 @@ import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectat
 import { LAZY_COMPONENT_TOKEN, LazyDirective } from '../../lib/directives/lazy.directive';
 
 @Component({ selector: 'host', template: '' })
-class Host {
+class HostComponent {
   path: string;
 
   activate(component: any) {}
@@ -33,10 +33,10 @@ class LazyComponent {}
 class LazyModule {}
 
 describe('LazyDirective', () => {
-  let host: SpectatorWithHost<LazyDirective, Host>;
+  let host: SpectatorWithHost<LazyDirective, HostComponent>;
   const create = createHostComponentFactory({
     component: LazyDirective,
-    host: Host,
+    host: HostComponent,
     imports: [ RouterTestingModule ]
   });
 
@@ -86,7 +86,7 @@ describe('LazyDirective', () => {
 
 });
 
-function spyHost(host: Host) {
+function spyHost(host: HostComponent) {
   spyOn(host, 'activate').and.callThrough();
   spyOn(host, 'deactivate').and.callThrough();
 }

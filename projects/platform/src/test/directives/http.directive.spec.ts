@@ -14,7 +14,7 @@ const BODY_STRINGIFY = `{ ngxf: 'The Best!' }`;
 const BODY = { ngxf: 'The Best!' };
 
 @Component({ selector: 'host', template: '' })
-class Host {
+class HostComponent {
   path: string;
   body: any;
 }
@@ -46,10 +46,10 @@ const REQUEST_METHODS_WITH_PARAMS = [
 ];
 
 describe('HttpDirective', () => {
-  let host: SpectatorWithHost<Host>;
+  let host: SpectatorWithHost<HostComponent>;
   const createHost = createHostComponentFactory({
     component: HttpDirective,
-    host: Host,
+    host: HostComponent,
     imports: [ HttpClientModule, HttpClientTestingModule ]
   });
 

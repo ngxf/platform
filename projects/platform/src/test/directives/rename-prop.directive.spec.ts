@@ -4,7 +4,7 @@ import { ComposeDirective } from '../../lib/directives/compose.directive';
 import { RenamePropDirective } from '../../lib/directives/rename-prop.directive';
 
 @Component({ selector: 'host', template: '' })
-class Host {}
+class HostComponent {}
 
 const TEMPLATE = `
 <ng-template #rename>
@@ -19,10 +19,10 @@ const TEMPLATE = `
 `;
 
 describe('RenamePropDirective', () => {
-  let host: SpectatorWithHost<RenamePropDirective, Host>;
+  let host: SpectatorWithHost<RenamePropDirective, HostComponent>;
   const create = createHostComponentFactory({
     component: RenamePropDirective,
-    host: Host,
+    host: HostComponent,
     declarations: [ ComposeDirective ]
   });
 

@@ -1,4 +1,15 @@
-import { Directive, EmbeddedViewRef, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
+import {
+  Directive,
+  EmbeddedViewRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnDestroy,
+  Output,
+  SimpleChanges,
+  TemplateRef,
+  ViewContainerRef
+} from '@angular/core';
 import { isObservable, Observable, SubscriptionLike } from 'rxjs';
 
 type ObservableOrPromise<T> = Observable<T> | Promise<T>;

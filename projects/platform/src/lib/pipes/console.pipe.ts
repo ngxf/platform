@@ -23,7 +23,7 @@ export const skipValueOperators = [
   'groupCollapsed'
 ];
 
-interface IConsole extends Console {}
+type IConsole = Console;
 
 @Pipe({
   name: 'console'

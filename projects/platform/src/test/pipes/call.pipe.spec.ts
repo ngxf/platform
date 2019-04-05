@@ -7,7 +7,7 @@ const TEXT = 'NGX Features Awesome';
 const TEXT2 = 'Really!';
 
 @Component({ selector: 'host', template: '' })
-class Host {
+class HostComponent {
   text: string = TEXT;
   method(value: string) {
     return this.transform(value);
@@ -19,10 +19,10 @@ class Host {
 }
 
 describe('CallPipe', () => {
-  let host: SpectatorWithHost<Host, Host>;
+  let host: SpectatorWithHost<HostComponent, HostComponent>;
   const create = createHostComponentFactory({
-    host: Host,
-    component: Host,
+    host: HostComponent,
+    component: HostComponent,
     declarations: [ CallPipe ]
   });
 

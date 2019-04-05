@@ -29,7 +29,7 @@ export function getHttp<C, S extends SpectatorWithHost<C, infer H>>(host: S): Sp
   http.httpClient = TestBed.get(HttpClient);
   http.controller = TestBed.get(HttpTestingController);
   http.dataService = host;
-  http.get = function <S>(provider: Type<S>): S & SpyObject<S> {
+  http.get = function <O>(provider: Type<O>): O & SpyObject<O> {
     return TestBed.get(provider);
   };
   http.expectOne = (url: string, method: HTTPMethod): TestRequest => {
