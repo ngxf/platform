@@ -5,6 +5,7 @@ import { ComposeDirective } from './directives/compose.directive';
 import { CookiesDirective } from './directives/cookies.directive';
 import { HttpDirective } from './directives/http.directive';
 import { InitDirective } from './directives/init.directive';
+import { IsDevModeDirective } from './directives/is-dev-mode.directive';
 import { LazyDirective, LAZY_COMPONENT_TOKEN } from './directives/lazy.directive';
 import { NestDirective } from './directives/nest.directive';
 import { RenamePropDirective } from './directives/rename-prop.directive';
@@ -28,6 +29,7 @@ const DIRECTIVES = [
   HttpDirective,
   LazyDirective,
   InitDirective,
+  IsDevModeDirective,
   NestDirective,
   RenamePropDirective,
   ReturnDirective,
@@ -68,6 +70,7 @@ export { ComposeDirective } from './directives/compose.directive';
 export { CookiesDirective } from './directives/cookies.directive';
 export { HttpDirective } from './directives/http.directive';
 export { InitDirective } from './directives/init.directive';
+export { IsDevModeDirective } from './directives/is-dev-mode.directive';
 export { LazyDirective, LAZY_COMPONENT_TOKEN } from './directives/lazy.directive';
 export { NestDirective } from './directives/nest.directive';
 export { RenamePropDirective } from './directives/rename-prop.directive';
