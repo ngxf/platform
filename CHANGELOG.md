@@ -1,3 +1,12 @@
+## [6.0.14](https://github.com/ngxf/platform/compare/v6.0.13...v6.0.14) (2019-04-07)
+
+
+### Features
+
+* **core:** implement *isDevMode directive, will render view when isDevMode() will returns true ([#6](https://github.com/ngxf/platform/issues/6)) ([5d25f86](https://github.com/ngxf/platform/commit/5d25f86))
+
+
+
 ## [6.0.13](https://github.com/ngxf/platform/compare/v6.0.12...v6.0.13) (2019-04-05)
 
 
