@@ -19,7 +19,10 @@
     "build:dev-schematics:watch": "npm run build:dev-schematics -- --watch",
     "build:dev-schematics-files:watch": "npm run build:dev-schematics-files && nodemon -e json,ts,html,css --watch ./schematics/src --exec 'npm run build:dev-schematics-files'",
     "run:dev-schematics": "npx ng g ./dist/dev-schematics/collection.json:examples --force",
-    "run:dev-schematics:watch": "concurrently 'npm:build:dev-schematics:watch' 'npm:build:dev-schematics-files:watch' 'npm:run:dev-schematics'"
+    "run:dev-schematics:watch": "concurrently 'npm:build:dev-schematics:watch' 'npm:build:dev-schematics-files:watch' 'npm:run:dev-schematics'",
+    "regain": "discovery",
+    "regain-build": "discovery-build",
+    "regain-deploy": "npm run regain-build && gh-pages -d build/default"
   },
   "private": true,
   "dependencies": {
@@ -73,7 +76,11 @@
     "tsickle": ">=0.29.0",
     "tslib": "^1.9.0",
     "tslint": "~5.11.0",
-    "typescript": "3.2.4"
+    "typescript": "3.2.4",
+    "@discoveryjs/discovery": "^1.0.0-beta.12",
+    "gh-pages": "^2.0.1",
+    "@babel/parser": "^7.3.1",
+    "async-directory-tree": "^2.3.1"
   },
   "config": {
     "commitizen": {
