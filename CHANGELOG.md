@@ -1,3 +1,12 @@
+# [6.1.0](https://github.com/ngxf/platform/compare/v6.0.15...v6.1.0) (2019-05-02)
+
+
+### Features
+
+* **core:** added *keepAlive directive ([054bb78](https://github.com/ngxf/platform/commit/054bb78))
+
+
+
 ## [6.0.14](https://github.com/ngxf/platform/compare/v6.0.13...v6.0.14) (2019-04-07)
 
 
