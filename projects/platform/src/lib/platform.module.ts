@@ -6,6 +6,7 @@ import { CookiesDirective } from './directives/cookies.directive';
 import { HttpDirective } from './directives/http.directive';
 import { InitDirective } from './directives/init.directive';
 import { IsDevModeDirective } from './directives/is-dev-mode.directive';
+import { KeepAliveConfig, KeepAliveDirective } from './directives/keep-alive.directive';
 import { LazyDirective, LAZY_COMPONENT_TOKEN } from './directives/lazy.directive';
 import { NestDirective } from './directives/nest.directive';
 import { RenamePropDirective } from './directives/rename-prop.directive';
@@ -30,6 +31,7 @@ const DIRECTIVES = [
   LazyDirective,
   InitDirective,
   IsDevModeDirective,
+  KeepAliveDirective,
   NestDirective,
   RenamePropDirective,
   ReturnDirective,
@@ -63,6 +65,14 @@ export class NgxfModule {
       ]
     };
   }
+  static forKeepAlive(keepAliveConfig: KeepAliveConfig): ModuleWithProviders {
+    return {
+      ngModule: NgxfModule,
+      providers: [
+        { provide: KeepAliveConfig, useValue: keepAliveConfig }
+      ]
+    };
+  }
 }
 
 export { AsyncDirective } from './directives/async.directive';
@@ -71,6 +81,7 @@ export { CookiesDirective } from './directives/cookies.directive';
 export { HttpDirective } from './directives/http.directive';
 export { InitDirective } from './directives/init.directive';
 export { IsDevModeDirective } from './directives/is-dev-mode.directive';
+export { KeepAliveDirective, KeepAliveConfig, KeepAliveGC } from './directives/keep-alive.directive';
 export { LazyDirective, LAZY_COMPONENT_TOKEN } from './directives/lazy.directive';
 export { NestDirective } from './directives/nest.directive';
 export { RenamePropDirective } from './directives/rename-prop.directive';
