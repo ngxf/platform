@@ -1,3 +1,17 @@
+# [8.0.0](https://github.com/ngxf/platform/compare/v6.1.0...v8.0.0) (2019-05-31)
+
+
+### Bug Fixes
+
+* bump angular to 8.0 ([3d5fcfc](https://github.com/ngxf/platform/commit/3d5fcfc))
+
+
+### Features
+
+* **core:** added *repeat directive ([e9b6430](https://github.com/ngxf/platform/commit/e9b6430))
+
+
+
 # [6.1.0](https://github.com/ngxf/platform/compare/v6.0.15...v6.1.0) (2019-05-02)
 
 
