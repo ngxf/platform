@@ -23,7 +23,7 @@ export class SpectatorHTTPWithResponse<S> extends SpectatorHTTP<S> {
   ) => TestRequest;
 }
 
-export function getHttp<C, S extends SpectatorWithHost<C, infer H>>(host: S): SpectatorHTTPWithResponse<S> {
+export function getHttp<C, S extends SpectatorWithHost<C, unknown>>(host: S): SpectatorHTTPWithResponse<S> {
   const http = new SpectatorHTTPWithResponse<S>();
 
   http.httpClient = TestBed.get(HttpClient);
