@@ -3,6 +3,7 @@ import { fakeAsync, tick } from '@angular/core/testing';
 import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectator';
 import { from, Observable, of, throwError } from 'rxjs';
 import { AsyncDirective } from '../../lib/directives/async.directive';
+import Spy = jasmine.Spy;
 
 @Component({ selector: 'host', template: '' })
 class HostComponent {
@@ -94,10 +95,31 @@ describe('AsyncDirective', () => {
 
         expect(host.hostElement).toHaveText(NEXT_VALUE);
       });
+
+      it('should call next and complete hooks with proper context', () => {
+        host = create(template);
+        spyHost(host.hostComponent);
+        host.setHostInput({ async: of(1) });
+
+        expect(getContext(host.hostComponent.next)).toBe(host.hostComponent);
+        expect(getContext(host.hostComponent.complete)).toBe(host.hostComponent);
+      });
+
+      it('should call error hook with proper context', () => {
+        host = create(template);
+        spyHost(host.hostComponent);
+        host.setHostInput({ async: throwError(ERROR_VALUE) });
+
+        expect(getContext(host.hostComponent.error)).toBe(host.hostComponent);
+      });
     });
   });
 
 });
+
+function getContext(method) {
+  return (method as Spy).calls.mostRecent().object;
+}
 
 function spyHost(host: HostComponent) {
   spyOn(host, 'next').and.callThrough();

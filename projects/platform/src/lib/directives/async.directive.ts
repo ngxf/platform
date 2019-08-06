@@ -1,4 +1,5 @@
 import {
+  ChangeDetectorRef,
   Directive,
   EmbeddedViewRef,
   EventEmitter,
@@ -81,14 +82,18 @@ export class AsyncDirective implements OnChanges, OnDestroy {
   private context: AsyncContext = { $implicit: null };
   private viewRef: EmbeddedViewRef<AsyncContext> =
     this.viewContainer.createEmbeddedView(this.templateRef, this.context);
+  private componentInstance: any;
 
   private strategy: SubscriptionStrategy;
   private subscription: SubscriptionLike | Promise<any>;
 
   constructor(
     private templateRef: TemplateRef<AsyncContext>,
-    private viewContainer: ViewContainerRef
-  ) {}
+    private viewContainer: ViewContainerRef,
+    private cd: ChangeDetectorRef
+  ) {
+    this.componentInstance = (cd as EmbeddedViewRef<any>).context;
+  }
 
   ngOnChanges(changes: SimpleChanges) {
     if ('async' in changes) {
@@ -133,7 +138,7 @@ export class AsyncDirective implements OnChanges, OnDestroy {
     this.context.$implicit = value;
     this.next.emit(value);
     if (isFunction(this.asyncNext)) {
-      this.asyncNext(value);
+      this.asyncNext.call(this.componentInstance, value);
     }
     this.viewRef.markForCheck();
   }
@@ -141,14 +146,14 @@ export class AsyncDirective implements OnChanges, OnDestroy {
   private onError(error: any): void {
     this.error.emit(error);
     if (isFunction(this.asyncError)) {
-      this.asyncError(error);
+      this.asyncError.call(this.componentInstance, error);
     }
   }
 
   private onComplete(): void {
     this.complete.next();
     if (isFunction(this.asyncComplete)) {
-      this.asyncComplete();
+      this.asyncComplete.call(this.componentInstance);
     }
   }
 
