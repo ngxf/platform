@@ -1,3 +1,12 @@
+## [8.0.1](https://github.com/ngxf/platform/compare/v8.0.0...v8.0.1) (2019-08-06)
+
+
+### Bug Fixes
+
+* **core:** call next, error and complete callbacks in async directive with proper context ([#15](https://github.com/ngxf/platform/issues/15)) ([cb9ca8a](https://github.com/ngxf/platform/commit/cb9ca8a))
+
+
+
 # [8.0.0](https://github.com/ngxf/platform/compare/v6.1.0...v8.0.0) (2019-05-31)
 
 
@@ -77,8 +86,8 @@
 
 ### Features
 
-* **core:** added new directive for virtual scroll ([17105db](https://github.com/ngxf/platform/commit/17105db))
 * implements Ivy Hooks via Mixins ([9c99fae](https://github.com/ngxf/platform/commit/9c99fae))
+* **core:** added new directive for virtual scroll ([17105db](https://github.com/ngxf/platform/commit/17105db))
 
 
 
