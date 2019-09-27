@@ -1,37 +1,22 @@
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule, MatCardModule, MatTabsModule } from '@angular/material';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavComponent } from './layout/nav/nav.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { CoreModule } from './core';
-import { SharedModule } from './shared';
+import { CounterComponent } from './counter/counter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    CounterComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule,
-    RouterModule.forRoot([
-      {
-        path: '', component: NavComponent, children: [
-          { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
-          { path: 'dashboard', loadChildren: './view/dashboard/dashboard.module#DashboardViewModule' },
-          { path: 'users', loadChildren: './view/users/users.module#UsersViewModule' }
-        ]
-      } ], {}),
-    CoreModule,
-    SharedModule,
-    LayoutModule,
-    FormsModule
+    MatCardModule,
+    MatTabsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

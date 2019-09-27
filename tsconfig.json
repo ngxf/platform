@@ -21,14 +21,17 @@
       "platform": [
         "dist/platform"
       ],
-      "platform/*": [
-        "dist/platform/*"
+      "connect": [
+        "dist/connect"
       ],
       "@ngxf/platform": [
         "projects/platform/src"
       ],
       "@ngxf/socket.io": [
         "projects/socketio/src"
+      ],
+      "@ngxf/connect": [
+        "projects/connect/src"
       ]
     }
   },

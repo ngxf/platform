@@ -1,5 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Roboto', sans-serif; }
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  min-width: 100vw;
+  min-height: 100vh;
+  font-weight: 200;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 0;
+  margin: 0;
+
+  color: white;
+  font-family: helvetica neue, Helvetica, Arial, "Lucida Grande", sans-serif;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 26px;
+
+  background: linear-gradient(145deg, #263238, #3b464b) !important;
+}
+
+.mat-card-header-text {
+  padding: 30px 0;
+  margin-left: auto !important;;
+  margin-right: auto !important;;
+}
+
+.mat-tab-label {
+  width: 33.33%;
+  opacity: 1 !important;
+  color: white
+}
+
+.mat-tab-label:nth-child(1),
+.mat-tab-body:nth-child(1),
+.mat-tab-body:nth-child(1) .mat-tab-body-content,
+.mat-tab-body:nth-child(1) .mat-tab-body-content .mat-card {
+  background: linear-gradient(145deg, #263238, #3b464b) !important;
+  color: white;
+}
+
+.mat-tab-label:nth-child(2),
+.mat-tab-body:nth-child(2),
+.mat-tab-body:nth-child(2) .mat-tab-body-content,
+.mat-tab-body:nth-child(2) .mat-tab-body-content .mat-card {
+  background: linear-gradient(to right, rgb(157, 80, 187), rgb(110, 72, 170)) !important;
+  color: white;
+}
+
+.mat-tab-label:nth-child(3),
+.mat-tab-body:nth-child(3),
+.mat-tab-body:nth-child(3) .mat-tab-body-content,
+.mat-tab-body:nth-child(3) .mat-tab-body-content .mat-card {
+  background: linear-gradient(to right, rgb(211, 131, 18), rgb(168, 50, 121)) !important;
+  color: white;
+}
+
+.mat-tab-body-wrapper {
+  height: calc(100vh - 49px);
+}
+.mat-tab-body, .mat-tab-body-content, .mat-card {
+  height: 100%;
+}
+
+.mat-card-title {
+  font-size: 48px !important;
+}
+
+.mat-card-content {
+  font-size: 68px !important;
+}
+

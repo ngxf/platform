@@ -1,5 +1,5 @@
 {
-  "name": "@ngxf/socket.io",
+  "name": "@ngxf/connect",
   "version": "9.0.0",
   "description": "NGXF - Non-State Management for Angular",
   "keywords": [
@@ -37,11 +37,7 @@
   },
   "homepage": "https://github.com/ngxf/platform",
   "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0 || ^8.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0 || ^8.0.0",
-    "@angular/router": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0 || ^8.0.0",
-    "@types/socket.io-client": "1.4.32",
-    "socket.io-client": "^2.0.0",
-    "rxjs": ">=6.0.0 || ^5.6.0-forward-compat.4"
+    "@angular/core": "^8.2.8 || ^9.0.0",
+    "rxjs": ">=6.4.0"
   }
 }
