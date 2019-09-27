@@ -1,3 +1,12 @@
+# [9.0.0](https://github.com/ngxf/platform/compare/v8.0.1...v9.0.0) (2019-09-27)
+
+
+### Features
+
+* **connect:** 🚀🦊 Implements new feature for ivy @Async() and connect({ ... }) ([cb9d2c1](https://github.com/ngxf/platform/commit/cb9d2c1))
+
+
+
 ## [8.0.1](https://github.com/ngxf/platform/compare/v8.0.0...v8.0.1) (2019-08-06)
 
 
