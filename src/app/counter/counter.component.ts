@@ -1,10 +1,20 @@
-import { Component, Input } from '@angular/core';
+import { Component, Injectable, Input } from '@angular/core';
 import { Async, connect } from '@ngxf/connect';
 import { Subject } from 'rxjs';
-import { scan, startWith } from 'rxjs/operators';
+import { scan, shareReplay, startWith } from 'rxjs/operators';
 
 interface CounterState {
   counter: number;
+}
+
+@Injectable({ providedIn: 'root' })
+export class CounterService {
+  increment = new Subject<number>();
+  counter = this.increment.pipe(
+    startWith(0),
+    scan((count, inc) => count + inc),
+    shareReplay({ bufferSize: 1, refCount: true })
+  );
 }
 
 @Component({
@@ -14,15 +24,14 @@ interface CounterState {
 })
 export class CounterComponent {
 
-  increment = new Subject<number>();
+  increment = this.service.increment;
 
   @Input() at: number;
 
   @Async() state: CounterState = connect({
-    counter: this.increment.pipe(
-      startWith(0),
-      scan((count, inc) => count + inc)
-    )
+    counter: this.service.counter
   });
+
+  constructor(private service: CounterService) {}
 
 }

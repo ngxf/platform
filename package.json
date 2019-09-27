@@ -7,6 +7,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:all": "ng build platform --prod && ng build socketio --prod && ng build connect --prod",
+    "build:demo:publish": "ng build ngxf --prod --base-href=platform && git add dist && git commit -m 'Update gh-pages' && git subtree push --prefix dist/ngxf origin gh-pages",
     "test": "npx jest -c jest.json",
     "test:all": "npm run test",
     "lint": "ng lint",
