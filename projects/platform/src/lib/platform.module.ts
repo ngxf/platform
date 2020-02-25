@@ -10,6 +10,7 @@ import { KeepAliveConfig, KeepAliveDirective } from './directives/keep-alive.dir
 import { LazyDirective, LAZY_COMPONENT_TOKEN } from './directives/lazy.directive';
 import { NestDirective } from './directives/nest.directive';
 import { RenamePropDirective } from './directives/rename-prop.directive';
+import { RepeatDirective } from './directives/repeat.directive';
 import { ReturnDirective } from './directives/return.directive';
 import { RouteDirective } from './directives/route.directive';
 import { SetPropsDirective } from './directives/set-props.directive';
@@ -34,6 +35,7 @@ const DIRECTIVES = [
   KeepAliveDirective,
   NestDirective,
   RenamePropDirective,
+  RepeatDirective,
   ReturnDirective,
   RouteDirective,
   SetPropsDirective,
@@ -56,7 +58,7 @@ const PIPES = [
   exports: [ DIRECTIVES, PIPES ]
 })
 export class NgxfModule {
-  static forLazy(component: Type<any>): ModuleWithProviders {
+  static forLazy(component: Type<any>): ModuleWithProviders<NgxfModule> {
     return {
       ngModule: NgxfModule,
       providers: [
@@ -65,7 +67,7 @@ export class NgxfModule {
       ]
     };
   }
-  static forKeepAlive(keepAliveConfig: KeepAliveConfig): ModuleWithProviders {
+  static forKeepAlive(keepAliveConfig: KeepAliveConfig): ModuleWithProviders<NgxfModule> {
     return {
       ngModule: NgxfModule,
       providers: [
@@ -85,6 +87,7 @@ export { KeepAliveDirective, KeepAliveConfig, KeepAliveGC } from './directives/k
 export { LazyDirective, LAZY_COMPONENT_TOKEN } from './directives/lazy.directive';
 export { NestDirective } from './directives/nest.directive';
 export { RenamePropDirective } from './directives/rename-prop.directive';
+export { RepeatDirective } from './directives/repeat.directive';
 export { ReturnDirective } from './directives/return.directive';
 export { RouteDirective } from './directives/route.directive';
 export { SetPropsDirective } from './directives/set-props.directive';

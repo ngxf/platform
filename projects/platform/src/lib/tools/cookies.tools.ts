@@ -79,7 +79,7 @@ export class CookiesService implements ICookieService {
         if (currentCookieString) {
             const cookieArray = currentCookieString.split('; ');
 
-            return cookieArray.reduce((cookies: ICookies, current: string) => {
+            return cookieArray.reduce((cookies: ICookies, current: string): object => {
                 const cookie = current.split('=');
 
                 return { ...cookies, [cookie[0]]: decodeURIComponent(cookie[1]) };

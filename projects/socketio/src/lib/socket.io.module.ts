@@ -13,3 +13,6 @@ const DIRECTIVES = [
   exports: [ DIRECTIVES ]
 })
 export class NgxfSocketIOModule {}
+
+export { SocketIODirective } from './directives/socket.io.directive';
+export { SocketIOOnDirective } from './directives/socket.io.on.directive';
