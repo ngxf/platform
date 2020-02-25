@@ -1,6 +1,6 @@
 {
   "name": "@ngxf/socket.io",
-  "version": "9.0.0",
+  "version": "9.0.1",
   "description": "NGXF - Non-State Management for Angular",
   "keywords": [
     "non-ngxs",
