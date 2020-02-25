@@ -2,8 +2,15 @@ import { ɵComponentDef as ComponentDef, ɵmarkDirty as markDirty } from '@angul
 import { from, Observable, ReplaySubject } from 'rxjs';
 import { mergeMap, takeUntil, tap } from 'rxjs/operators';
 
+const componentDefKey = 'ɵcmp';
+const componentFactoryKey = 'ɵfac';
+
 const onInitHook = Symbol('ngOnInit');
 const onDestroyHook = Symbol('ngOnDestroy');
+
+type Mutable<T> = {
+  -readonly[P in keyof T]: T[P]
+};
 
 export type ObservableMap<T> = {
   [P in keyof T]: Observable<T[P]>;
@@ -92,11 +99,11 @@ export function Async<T extends Function>(): PropertyDecorator {
       }
     });
 
-    const componentDef: ComponentDef<T> =
-      target.constructor.ngComponentDef;
+    const componentDef: Mutable<ComponentDef<T>> =
+      target.constructor[componentDefKey];
 
-    const componentFactoryFn = componentDef.factory;
-    componentDef.factory = function(this: T, ...args: any[]) {
+    const componentFactoryFn = target.constructor[componentFactoryKey];
+    target.constructor[componentFactoryKey] = function(this: T, ...args: any[]) {
       const instance = componentFactoryFn.apply(this, args);
       hooksMap.init(instance);
 
