@@ -1,4 +1,9 @@
-# [9.0.0](https://github.com/ngxf/platform/compare/v8.0.1...v9.0.0) (2019-09-27)
+## [9.0.1](https://github.com/ngxf/platform/compare/v8.0.1...v9.0.1) (2020-02-25)
+
+
+### Bug Fixes
+
+* **connect:** fixes Ivy ([9455571](https://github.com/ngxf/platform/commit/9455571))
 
 
 ### Features
@@ -95,8 +100,8 @@
 
 ### Features
 
-* implements Ivy Hooks via Mixins ([9c99fae](https://github.com/ngxf/platform/commit/9c99fae))
 * **core:** added new directive for virtual scroll ([17105db](https://github.com/ngxf/platform/commit/17105db))
+* implements Ivy Hooks via Mixins ([9c99fae](https://github.com/ngxf/platform/commit/9c99fae))
 
 
 
