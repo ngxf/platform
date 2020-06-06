@@ -27,7 +27,7 @@ describe('CallPipe', () => {
   });
 
   it('should call component method at once', fakeAsync(() => {
-    host = create(`{{ text | call: 'method' }}`, false);
+    host = create(`{{ text | call: method }}`, false);
     spyOn(host.hostComponent, 'method').and.callThrough();
 
     host.detectChanges();
@@ -38,7 +38,7 @@ describe('CallPipe', () => {
   }));
 
   it('should call component method after change text', fakeAsync(() => {
-    host = create(`{{ text | call: 'method' }}`, false);
+    host = create(`{{ text | call: method }}`, false);
     spyOn(host.hostComponent, 'method').and.callThrough();
 
     host.detectChanges();
@@ -52,14 +52,6 @@ describe('CallPipe', () => {
 
     host.detectChanges();
     expect(host.hostComponent.method).toHaveBeenCalledTimes(2);
-  }));
-
-  it('should call method by string', fakeAsync(() => {
-    host = create(`{{ text | call: 'method' }}`, false);
-    spyOn(host.hostComponent, 'method').and.callThrough();
-
-    host.detectChanges();
-    expect(host.hostComponent.method).toHaveBeenCalledTimes(1);
   }));
 
   it('should call method by function', fakeAsync(() => {
