@@ -1,6 +1,6 @@
 {
   "name": "@ngxf/socket.io",
-  "version": "9.0.1",
+  "version": "9.0.2",
   "description": "NGXF - Non-State Management for Angular",
   "keywords": [
     "non-ngxs",
@@ -37,9 +37,9 @@
   },
   "homepage": "https://github.com/ngxf/platform",
   "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0",
-    "@angular/router": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0",
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0",
+    "@angular/router": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0",
     "@types/socket.io-client": "1.4.32",
     "socket.io-client": "^2.0.0",
     "rxjs": ">=6.0.0 || ^5.6.0-forward-compat.4"
