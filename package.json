@@ -1,6 +1,6 @@
 {
   "name": "ngxf",
-  "version": "9.0.1",
+  "version": "9.0.3",
   "scripts": {
     "ng": "ng",
     "tsc": "tsc",
